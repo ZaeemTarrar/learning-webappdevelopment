@@ -13,13 +13,13 @@ There are 2 types of tags
 > Paired Tags
 
 ```
-<StartingTag></EndingTag>
+<StartingTag> </EndingTag>
 ```
 
 Correct Formats to use Paired Tag
 
 ```
-<Tag></Tag>
+<Tag> </Tag>
 ```
 
 ```
@@ -27,18 +27,18 @@ Correct Formats to use Paired Tag
 ```
 
 ```
-<Tag1></Tag1>
+<Tag1> </Tag1>
 ```
 
 ```
-<Tag2></Tag2>
+<Tag2> </Tag2>
 ```
 
 Tag Functionalities can be implemented nestedly too
 
 ```
 <Tag3>
-    <Tag4></Tag4>
+    <Tag4> </Tag4>
 </Tag3>
 ```
 
