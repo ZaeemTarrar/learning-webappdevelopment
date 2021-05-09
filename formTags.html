@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tags</title>
+</head>
+<body>
+    <div>
+        <form id="" class="" action="" method="" enctype="" >
+            <fieldset>
+                <legend>
+                    Personal Information
+                </legend>
+                <div>
+                    <label for=""> Name </label>
+                    <input type="text" placeholder=" Enter you name here " >
+                </div>
+                <br>
+                <div>
+                    <label for=""> Age </label>
+                    <input type="number" placeholder=" Enter you age here " >
+                </div>
+                <br>
+                <div>
+                    <label for=""> Favourite Color </label>
+                    <input type="color" placeholder=" Select Favourite Color " >
+                </div>
+                <br>
+                <div>
+                    <label for=""> Date of Birth </label>
+                    <input type="date" placeholder=" Select your Date of Birth " >
+                </div>
+                <br>
+                <div>
+                    <label for=""> Time of Birth </label>
+                    <input type="time" placeholder=" Select your Time of Birth " >
+                </div>
+                <br>
+                <div>
+                    <label for=""> Salary </label>
+                    <br>
+                    0 <input type="range" min="0" max="10000000" value="0" > 10000000
+                </div>
+                <br>
+                <div>
+                    <label for=""> Email </label>
+                    <input type="email" placeholder=" Enter your email address " >
+                </div>
+                <br>
+                <div>
+                    <label for=""> Url </label>
+                    <input type="url" placeholder=" Enter your Fb Url " >
+                </div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>
+                    Extra Information
+                </legend>
+                <div>
+                    <div>
+                        <label for=""> Choose Gender </label>
+                        <br>
+                        <input type="radio" name="gender" value="male" > Male
+                        <input type="radio" name="gender" value="female" > Female
+                        <input type="radio" name="gender" value="other" > Other
+                    </div>
+                    <br>
+                    <div>
+                        <label for=""> Choose Fruits </label>
+                        <br>
+                        <input type="checkbox" name="fruits" value="apple" > Apple
+                        <input type="checkbox" name="fruits" value="orange" > Orange
+                        <input type="checkbox" name="fruits" value="mango" > Mango
+                    </div>
+                    <br>
+                    <div>
+                        <label for=""> Select Country </label>
+                        <br>
+                        <select name="" id="" name="counrties" >
+                            <option value=""> None </option>
+                            <optgroup label="Pakistan" >
+                                <option value="lahore"> Lahore </option>
+                                <option value="islamabad"> Islamabad </option>
+                                <option value="karachi"> Karachi </option>
+                            </optgroup>
+                            <optgroup label="India" >
+                                <option value="dehli"> Dehli </option>
+                                <option value="goa"> Goa </option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for=""> Description </label>
+                        <br>
+                        <textarea name="description" id="" cols="30" rows="10" placeholder=" type here ... " >
+
+                        </textarea>
+                    </div>
+                    <br>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

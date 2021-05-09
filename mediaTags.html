@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Media Tags </title>
+</head>
+<body>
+    <div>
+        <embed src="blur.swf" width="400px" height="200px">
+    </div>
+    <div>
+        <iframe src="" frameborder="0"></iframe>
+    </div>
+    <div>
+        <video controls="controls" src="shuttle.mp4">
+            Your browser does not support the HTML5 Video element.
+        </video>
+    </div>
+    <div>
+        <video controls="controls">
+            <source src="shuttle.mp4" type="video/mp4">
+            <!-- <source src="shuttle.ogv" type="video/ogg"> -->
+            Your browser does not support the HTML5 Video element.
+        </video>
+    </div>
+    <div>
+        <video controls="controls">
+            <source src="shuttle.mp4" type="video/mp4">
+            <source src="shuttle.ogv" type="video/ogg">
+            <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+            Your browser does not support the HTML5 Video element.
+        </video>
+    </div>
+    <div>
+        <object type="application/x-shockwave-flash">
+            <param name="movie" value="video/blur.swf">
+        </object>
+    </div>
+    <div>
+        <audio controls="controls" src="birds.mp3">
+            Your browser does not support the HTML5 Audio element.
+        </audio>
+    </div>
+    <div>
+        <audio controls="controls">
+            <source src="birds.mp3" type="audio/mpeg">
+            <!-- <source src="birds.ogg" type="audio/ogg"> -->
+            Your browser does not support the HTML5 Audio element.
+        </audio>
+    </div>
+</body>
+</html>
