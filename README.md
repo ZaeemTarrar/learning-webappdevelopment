@@ -151,7 +151,7 @@ a:active {
 
 ## Pseudo Elements
 
-## First Line
+### First Line
 
 ```
 p::first-line {
@@ -160,7 +160,7 @@ p::first-line {
 }
 ```
 
-## First Letter
+### First Letter
 
 ```
 p::first-letter {
@@ -169,7 +169,7 @@ p::first-letter {
 }
 ```
 
-## Before
+### Before
 
 ```
 p::before {
@@ -178,7 +178,7 @@ p::before {
 }
 ```
 
-## After
+### After
 
 ```
 p::after {
@@ -187,7 +187,7 @@ p::after {
 }
 ```
 
-## Marker
+### Marker
 
 Styles markers of the list items
 
@@ -198,7 +198,7 @@ p::marker {
 }
 ```
 
-## Selection
+### Selection
 
 Styles the selected text
 
@@ -206,5 +206,47 @@ Styles the selected text
 p::selection {
   color: #ff0000;
   font-size: xx-large;
+}
+```
+
+## Attribute Selectors
+
+Selection Via any attribute
+
+```
+a[target="_blank"] {
+  background-color: yellow;
+}
+```
+
+Selection of attribute containing a specific word
+
+```
+[title~="flower"] {
+  border: 5px solid yellow;
+}
+```
+
+Selection of attribute starting with a specific word
+
+```
+[class|="top"] {
+  background: yellow;
+}
+```
+
+Selection of attribute beginning with a specific value
+
+```
+[class|^="top"] {
+  background: yellow;
+}
+```
+
+Selection of attribute ending with a specific value
+
+```
+[class|$="top"] {
+  background: yellow;
 }
 ```

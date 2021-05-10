@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Navigation </title>
     <style>
+        .btn {
+            background-color: cyan;
+            padding: 10px;
+        }
+        #menu {
+            position: absolute;
+            display: none;
+        }
+        #dropdown {
+            display: inline-block;
+        }
+        #dropdown > button.btn:first-child:hover {
+            background-color: orange;
+        }
+        #dropdown:hover #menu {
+            display: block;
+        }
         ul {
             list-style-type: none;
             /* border: 2px solid #000; */
@@ -43,21 +60,24 @@
     </style>
 </head>
 <body>
-    <div>
-        <ul>
-            <li>
-                <a href="fonts.html"> Fonts </a>
-            </li>
-            <li>
-                <a href="table.html"> Table </a>
-            </li>
-            <li>
-                <a href="transparency.html"> Transparency </a>
-            </li>
-            <li>
-                <a href="backgroundImage.html"> Background Image </a>
-            </li>
-        </ul>
+    <div id="dropdown" >
+        <button class="btn"> Main Menu </button>
+        <div id="menu" >
+            <ul>
+                <li>
+                    <a href="fonts.html"> Fonts </a>
+                </li>
+                <li>
+                    <a href="table.html"> Table </a>
+                </li>
+                <li>
+                    <a href="transparency.html"> Transparency </a>
+                </li>
+                <li>
+                    <a href="backgroundImage.html"> Background Image </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
