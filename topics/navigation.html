@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Navigation </title>
+    <style>
+        ul {
+            list-style-type: none;
+            /* border: 2px solid #000; */
+            margin: 0px;
+            padding: 0px;
+            width: 300px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        ul li, ul li a {
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            margin: 0px;
+            transition: background-color 0.5s, transform 0.5s;
+            color: white;
+        }
+        ul > li > a {
+            background-color: transparent;
+        }
+        ul li {
+            background-color: #366;
+            border: 0px;
+            border: 2px solid #fff;
+        }
+        /* ul li:first-child {
+            background-color: #366;
+            border: 0px;
+            border-top: 0px;
+        } */
+        ul > li:hover {
+            background-color: #369;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <a href="fonts.html"> Fonts </a>
+            </li>
+            <li>
+                <a href="table.html"> Table </a>
+            </li>
+            <li>
+                <a href="transparency.html"> Transparency </a>
+            </li>
+            <li>
+                <a href="backgroundImage.html"> Background Image </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

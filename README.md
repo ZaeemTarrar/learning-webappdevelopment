@@ -148,3 +148,63 @@ a:active {
   color: #FF0000;
 }
 ```
+
+## Pseudo Elements
+
+## First Line
+
+```
+p::first-line {
+  color: #ff0000;
+  font-variant: small-caps;
+}
+```
+
+## First Letter
+
+```
+p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+```
+
+## Before
+
+```
+p::before {
+  color: #ff0000;
+  font-size: xx-large;
+}
+```
+
+## After
+
+```
+p::after {
+  color: #ff0000;
+  font-size: xx-large;
+}
+```
+
+## Marker
+
+Styles markers of the list items
+
+```
+p::marker {
+  color: #ff0000;
+  font-size: xx-large;
+}
+```
+
+## Selection
+
+Styles the selected text
+
+```
+p::selection {
+  color: #ff0000;
+  font-size: xx-large;
+}
+```
