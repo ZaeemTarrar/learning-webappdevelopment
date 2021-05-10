@@ -1,6 +1,8 @@
 # Cascading Style Sheets
 
-## Inline Css
+## Types of Css
+
+### Inline Css
 
 Inline Css Structure
 
@@ -14,7 +16,7 @@ Inline Css Example
 <Tag style="background-color:yellow;" > Hello world ! </Tag>
 ```
 
-## Internal Css
+### Internal Css
 
 Internal Css Structure
 
@@ -36,7 +38,7 @@ Internal Css Example
 <style>
 ```
 
-## External Css
+### External Css
 
 External Css is same as the Internal but is coding without _style_ tags in another file ( .css ) and it is linked to the html file in the _head_ tag, as follow:
 
@@ -61,4 +63,46 @@ External Css Example
     p {
         background-color: red;
     }
+```
+
+## Css Combinators
+
+### Descendant Selector
+
+Styles all the second elements inside the first element
+
+```
+div p {
+    property: value;
+}
+```
+
+### Child Selector
+
+Styles all the second elements that are directly child of the first element
+
+```
+div > p {
+    property: value;
+}
+```
+
+### Adjacent Sibling Selector
+
+Styles all the second elements that come directly after the first element
+
+```
+div + p {
+    property: value;
+}
+```
+
+### General Sibling Selector
+
+Styles all the second elements that are siblings of the first element
+
+```
+div ~ p {
+    property: value;
+}
 ```
