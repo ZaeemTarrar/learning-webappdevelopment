@@ -22,17 +22,143 @@
 
         /* Styling via Class Name */
         .center {
-            text-align: center
+            text-align: center;
+            text-transform: capitalize;
+            text-indent: 50px;
+            word-spacing: 15px;
+            letter-spacing:5px;
+            background-image: url("./apple.jpg");
+            /* [top,right,blur,color] */
+            text-shadow: 2px 2px 5px #fff;
+            font-family: "arial";
         }
+        .rounder {
+            border-radius: 20px;
+        }
+
+        /* Styling every "b" tag inside the "div" tag */
+        div b {
+            color: red;
+            font-weight: bold;;
+        }
+
+        /* Styling every "b" tag that direct is the child to a "div" tag */
+        div > b {
+            text-decoration: underline;
+            font-size: 30px;
+        }
+
+        /* Styling every "p" tag that comes directly after "b" tag, inside the "div" tag */
+        div > b + p {
+            font-size: 40px;
+            font-family: "Comic Sans MS";
+        }
+
+        /* Styling every "p" tag that comes directly after "center" class, inside the "div" tag */
+        div > .center + p {
+            outline: 5px solid red;
+        }
+
+        /* Styling all the tags in the "div" tag */
+        div * {
+            font-family: "Times New Roman";
+        }
+
+        div p {
+            text-decoration: line-through;
+        }
+
+        /* Styling Ids "a1" "a2" "a3" together */
+        #a1, #a2, #a3 {
+            background-color: purple;
+        }
+
+        /* Styling "div" tag with the "center" class */
+        div.center {
+            /* RGB Color Hexa Value */
+            background-color: #369; 
+            text-align: right;
+        }
+
+        div > img {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            border-radius: 30px;
+            /* Shadow [ top, right, blur, color, state* ] */
+            box-shadow: 5px 5px 20px #000;
+        }
+
+        .myList {
+            list-style: circle;
+        }
+        .myList2 {
+            list-style: lower-greek;
+        }
+        .myList3 {
+            list-style: none;
+        }
+        .myList3 > li {
+            background-color: #369;
+            padding: 10px;
+            border: 1px solid #000;
+            box-shadow: 0px 0px 5px #000 inset;
+            width: 200px;
+        }
+
     </style>
 </head>
 <body>
     <div>
+        <b> Welcome to Jungle ! </b>
         <p id="para1">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatum omnis quis blanditiis, 
+            tenetur praesentium, libero <span id="a1" > sdlfhjjk </span> maiores incidunt repellendus <span id="a2" > dflglkl</span> eius ullam dolorem voluptate veritatis, 
+            neque voluptates sequi. Adipisci, <span id="a3" > dfdgdfg </span> saepe ratione.
+            <!-- <p>
+                lorem ipsum dolor sit .... this is commented
+            </p> -->
+        </p>
+        <p class="center" >
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatum omnis quis blanditiis, 
             tenetur praesentium, libero maiores incidunt repellendus eius ullam dolorem voluptate veritatis, 
             neque voluptates sequi. Adipisci, saepe ratione.
         </p>
+        <div class="center" >
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatum omnis quis blanditiis, 
+            tenetur praesentium, libero maiores incidunt repellendus eius ullam dolorem voluptate veritatis, 
+            neque voluptates sequi. Adipisci, saepe ratione.
+        </div>
+        <p class="rounder" >
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatum omnis quis blanditiis, 
+            tenetur praesentium, <b>libero</b> maiores incidunt repellendus eius ullam dolorem voluptate veritatis, 
+            neque voluptates sequi. Adipisci, saepe ratione.
+        </p>
+    </div>
+    <div>
+        <ul class="myList" >
+            <li> Apple </li>
+            <li> Orange </li>
+            <li> Grapes </li>
+            <li> Bananas </li>
+        </ul>
+        <br>
+        <ol class="myList2" >
+            <li> Apple </li>
+            <li> Orange </li>
+            <li> Grapes </li>
+            <li> Bananas </li>
+        </ol>
+        <br>
+        <ul class="myList3" >
+            <li> Apple </li>
+            <li> Orange </li>
+            <li> Grapes </li>
+            <li> Bananas </li>
+        </ul>
+    </div>
+    <div style="text-align: center;" >
+        <img src="apple.jpg" alt="" class="thumbnail" >
     </div>
 </body>
 </html>

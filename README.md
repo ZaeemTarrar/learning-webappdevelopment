@@ -38,7 +38,14 @@ Internal Css Example
 
 ## External Css
 
-External Css is same as the Internal but is coding without _style_ tags in another file ( .css )
+External Css is same as the Internal but is coding without _style_ tags in another file ( .css ) and it is linked to the html file in the _head_ tag, as follow:
+
+```
+<head>
+    <title> Website </title>
+    <link tyle="text/css" rel="stylesheet" href="./style.css" />
+</head>
+```
 
 External Css Structure
 
