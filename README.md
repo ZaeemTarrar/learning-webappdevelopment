@@ -106,3 +106,45 @@ div ~ p {
     property: value;
 }
 ```
+
+## Pseudo-Classes
+
+### Link
+
+UnVisited Links
+
+```
+a:link {
+  color: #FF0000;
+}
+```
+
+### Visited
+
+Visited Links
+
+```
+a:visited {
+  color: #FF0000;
+}
+```
+
+### Hover
+
+Links Currently getting hovered by mouse
+
+```
+a:hover {
+  color: #FF0000;
+}
+```
+
+### Active
+
+Links currently getting clicked by mouse
+
+```
+a:active {
+  color: #FF0000;
+}
+```
