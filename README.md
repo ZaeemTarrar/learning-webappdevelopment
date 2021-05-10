@@ -250,3 +250,11 @@ Selection of attribute ending with a specific value
   background: yellow;
 }
 ```
+
+Selecting specified input tag type
+
+```
+input[type=text]
+input[type=password]
+input[type=number]
+```
