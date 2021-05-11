@@ -60,3 +60,17 @@ Some attributes directly use a value while some have particular properties to be
 ```
 <Tag attribute = " property: value; property: value " ></Tag>
 ```
+
+Following are some of the mostly used attributes
+
+### Source Attribute
+
+```
+<img src="apple.jpg" alt="" />
+```
+
+### Hyper Link Reference Attribute
+
+```
+<a href="http://www.google.com" > Google </a>
+```
