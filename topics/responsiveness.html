@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Responsiveness </title>
+    <style>
+        .mainBox {
+            margin: 0px;
+            padding: 0px;
+        }
+        .box {
+            background-color: gold;
+            margin: 0px;
+            padding: 0px;
+            height: 30px;
+            /* display: inline-block; */
+            float: left;
+        }
+        .box2 {
+            background-color: green;
+            margin: 0px;
+            padding: 0px;
+            height: 30px;
+            /* display: inline-block; */
+            float: left;
+        }
+        .box3 {
+            background-color: red;
+            margin: 0px;
+            padding: 0px;
+            height: 30px;
+            /* display: inline-block; */
+            float: left;
+        }
+        .full {
+            width: 100%;
+        }
+        .half {
+            width: 50%;
+        }
+        .quarter {
+            width: 25%;
+        }
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainBox" >
+        <div class="box full"></div>
+        <div class="clear"></div>
+        <br>
+        <div class="box full">
+            <div class="box2 half"></div>
+        </div>
+        <div class="clear"></div>
+        <br>
+        <div class="box full">
+            <div class="box2 quarter"></div>
+            <div class="box3 quarter"></div>
+            <div class="box2 quarter"></div>
+            <div class="box3 quarter"></div>
+        </div>
+        <div class="clear"></div>
+        <br>
+        <div class="box full">
+            <div class="box2 quarter"></div>
+            <div class="box half">
+                <div class="box3 quarter"></div>
+                <div class="box2 quarter">
+                    <div class="box quarter"></div>
+                    <div class="box2 quarter"></div>
+                    <div class="box quarter"></div>
+                    <div class="box2 quarter"></div>
+                </div>
+                <div class="box3 quarter"></div>
+                <div class="box2 quarter"></div>
+            </div>
+            <div class="box3 quarter"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>
+</html>
