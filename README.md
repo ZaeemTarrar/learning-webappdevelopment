@@ -258,3 +258,13 @@ input[type=text]
 input[type=password]
 input[type=number]
 ```
+
+## Force Styling
+
+To force a cascaded style, we use _!important_ key word
+
+```
+p {
+  background-color: green !important;
+}
+```
