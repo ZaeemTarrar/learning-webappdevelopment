@@ -385,6 +385,7 @@ background-color: #369;
 ```
 
 Structure -> rgb( Red, Blue, Green )
+
 Structure -> rgba( Red, Blue, Green, opacity )
 
 ```
