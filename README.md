@@ -392,3 +392,68 @@ Structure -> rgba( Red, Blue, Green, opacity )
 color: rgb(255,0,0)
 background-color: rgba(255,0,0,0.2)
 ```
+
+### Backgrounds
+
+```
+background: #000;
+background-color: red;
+background-image: url("wallpaper.jpg")
+```
+
+### Inheritance
+
+`inherit` keyword is used to inherit any value for the parent, for any property
+
+```
+border: inherit;
+```
+
+### Color Gradients
+
+`Linear Gradient`
+
+Structure
+
+```
+background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+```
+
+Example
+
+```
+background-image: linear-gradient(red, yellow);
+background-image: linear-gradient(to right,red, yellow);
+background-image: linear-gradient(to bottom right,red, yellow);
+background-image: linear-gradient(90deg,red, yellow);
+background-image: linear-gradient(90deg,red, yellow,green,blue);
+```
+
+`Radial Gradient`
+
+Structure
+
+```
+background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+```
+
+Example
+
+```
+background-image: radial-gradient(red, yellow, green);
+background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+background-image: radial-gradient(circle, red, yellow, green);
+background-image: radial-gradient(closest-side at 60% 55%, red, yellow, black);
+background-image: radial-gradient(farthest-side at 60% 55%, red, yellow, black);
+background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+```
+
+### Shadows
+
+Structure -> `top` `left` `blur` `color` `type*`
+
+```
+text-shadow: 0px 0px 10px red;
+box-shadow: 5px 5px 20px blue;
+box-shadow: 0px 0px 10px green inset;
+```
