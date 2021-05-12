@@ -376,3 +376,18 @@ display: none;
 visibility: hidden;
 visibility: visible;
 ```
+
+### Colors
+
+```
+color: red;
+background-color: #369;
+```
+
+Structure -> rgb( Red, Blue, Green )
+Structure -> rgba( Red, Blue, Green, opacity )
+
+```
+color: rgb(255,0,0)
+background-color: rgba(255,0,0,0.2)
+```
