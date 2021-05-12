@@ -40,7 +40,7 @@ Internal Css Example
 
 ### External Css
 
-External Css is same as the Internal but is coding without _style_ tags in another file ( .css ) and it is linked to the html file in the _head_ tag, as follow:
+External Css is same as the Internal but is coding without `style` tags in another file ( .css ) and it is linked to the html file in the `head` tag, as follow:
 
 ```
 <head>
@@ -214,7 +214,7 @@ p::selection {
 Selection Via any attribute
 
 ```
-a[target="_blank"] {
+a[target="`blank"] {
   background-color: yellow;
 }
 ```
@@ -261,7 +261,7 @@ input[type=number]
 
 ## Force Styling
 
-To force a cascaded style, we use _!important_ key word
+To force a cascaded style, we use `!important` key word
 
 ```
 p {
@@ -273,7 +273,7 @@ p {
 
 ### Flex Boxes
 
-Flexes are used for grid systems, block based web user interface and web responsiveness. Display _property_ is set to `flex`
+Flexes are used for grid systems, block based web user interface and web responsiveness. Display `property` is set to `flex`
 
 ```
 .flexBox {
@@ -283,35 +283,35 @@ Flexes are used for grid systems, block based web user interface and web respons
 
 Following are some of the properties of flex boxes
 
-_order:_
+`order:`
 Used to give an order to flex items
 
 ```
 order: 2;
 ```
 
-_flex-grow_
+`flex-grow`
 Used to set a Respective growth rate for the flex items
 
 ```
 flex-growth: 3;
 ```
 
-_flex-shrink_
+`flex-shrink`
 Used to set a Respective shrinking rate for the flex items
 
 ```
 flex-shrink: 0;
 ```
 
-_flex-basis_
+`flex-basis`
 Used to set Initial legnth etc
 
 ```
 flex-basis: 200px;
 ```
 
-_align-self_
+`align-self`
 Used to give position to the flex item in the flex box container
 
 ```
@@ -324,4 +324,22 @@ Properties can be set together too
 
 ```
 flex: 0 0 200px;
+```
+
+Flex Box Directions can be set as
+
+```
+flex-direction: row;
+flex-direction: column;
+```
+
+Flex Responsiveness by wrapping it
+
+```
+.container {
+  flex-wrap: wrap;
+}
+.box {
+  flex: 50%;
+}
 ```
