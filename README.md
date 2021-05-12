@@ -268,3 +268,60 @@ p {
   background-color: green !important;
 }
 ```
+
+## Basic Topics
+
+### Flex Boxes
+
+Flexes are used for grid systems, block based web user interface and web responsiveness. Display _property_ is set to `flex`
+
+```
+.flexBox {
+  display: flex;
+}
+```
+
+Following are some of the properties of flex boxes
+
+_order:_
+Used to give an order to flex items
+
+```
+order: 2;
+```
+
+_flex-grow_
+Used to set a Respective growth rate for the flex items
+
+```
+flex-growth: 3;
+```
+
+_flex-shrink_
+Used to set a Respective shrinking rate for the flex items
+
+```
+flex-shrink: 0;
+```
+
+_flex-basis_
+Used to set Initial legnth etc
+
+```
+flex-basis: 200px;
+```
+
+_align-self_
+Used to give position to the flex item in the flex box container
+
+```
+align-self: center;
+align-self: flex-start;
+align-self: flex-end;
+```
+
+Properties can be set together too
+
+```
+flex: 0 0 200px;
+```
