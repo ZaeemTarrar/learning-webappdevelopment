@@ -343,3 +343,36 @@ Flex Responsiveness by wrapping it
   flex: 50%;
 }
 ```
+
+### Borders
+
+Setting up border by: `width` `type` `color`
+
+```
+border: 1px solid red;
+border: 1px dashed transparent;
+border: 1px dotted #000;
+```
+
+Setting up border image series
+
+```
+border-image: url("tile.png") 20 round;
+border-image: url("tile.png") 30 stretch;
+```
+
+### Displays
+
+```
+display: block;
+display: inline-block;
+display: inline;
+display: none;
+```
+
+### Visibility
+
+```
+visibility: hidden;
+visibility: visible;
+```
