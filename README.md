@@ -52,17 +52,17 @@ External Css is same as the Internal but is coding without `style` tags in anoth
 External Css Structure
 
 ```
-    Tagname {
-        property: value
-    }
+Tagname {
+    property: value
+}
 ```
 
 External Css Example
 
 ```
-    p {
-        background-color: red;
-    }
+p {
+    background-color: red;
+}
 ```
 
 ## Css Combinators
