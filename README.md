@@ -1,1 +1,1 @@
-# Python
+# JavaScript - Browser Games
