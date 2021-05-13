@@ -1,1 +1,1 @@
-# Geology
+# Astrology
