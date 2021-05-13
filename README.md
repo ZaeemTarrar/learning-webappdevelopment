@@ -1,1 +1,1 @@
-# Astrology
+# Javascript
