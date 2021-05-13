@@ -1,1 +1,1 @@
-# Electron JS + React JS
+# Python
