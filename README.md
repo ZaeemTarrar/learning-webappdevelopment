@@ -1,1 +1,1 @@
-# Electrical Engineering
+# Mechanical Engineering
