@@ -1,1 +1,1 @@
-# Python - Raspberry Pi
+# Python - Artificial Intelligence + Data Science
