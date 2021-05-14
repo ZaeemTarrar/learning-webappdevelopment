@@ -607,17 +607,18 @@ Detailed faded Reflection
 
 ### Image Fits
 
-Managing Aspect ratio and fit-ability etc
+Managing Aspect ratio, position and fit-ability etc
 
 ```
 img {
   width: 100px;
   height: 100px;
   object-fit: cover;
+  object-position: 80% 100%;
 }
 ```
 
-More Values
+`object-fit` - More Values
 
 - cover
 - contain
