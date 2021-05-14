@@ -68,6 +68,7 @@ String
 
 ```
 myName = "Zaeem Hassan Tarrar";
+fatherName = 'Maalik Tarrar';
 ```
 
 Number
@@ -346,7 +347,74 @@ Math.log10(x);     // returns logrithm base 10
 Math.exp(x);        // e power x
 ```
 
+## Random Number
+
+```
+Math.floor(Math.random() * 10);     // returns a random integer from 0 to 9
+```
+
 ## String Methods
+
+String Complicated Symbols
+
+`/'` **Single Quote**
+`/"` **Double Quote**
+`//` **Slash**
+`/b` **Backspace**
+`/n` **New-line**
+
+Literal String
+
+```
+var word = "hello world";
+```
+
+Object String
+
+```
+var word = new String("hello world");
+```
+
+**String Equality**
+
+- `TRUE` Literal String == Object String
+- `FALSE` Literal String === Object String
+
+String legnth
+
+```
+var x = word.length;
+```
+
+Index of Position of First Occurance
+
+```
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+```
+
+`search starting position in second parameter`
+
+```
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate",15);
+```
+
+Index of Position of Last Occurance
+
+```
+var str = "Please locate where 'locate' occurs!";
+var pos = str.lastIndexOf("locate");
+```
+
+`search starting position in second parameter`
+
+```
+var str = "Please locate where 'locate' occurs!";
+var pos = str.lastIndexOf("locate",15);
+```
+
+**Note:** `-1` Means Text was not found !
 
 ## Number Methods
 
