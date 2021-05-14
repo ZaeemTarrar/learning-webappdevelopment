@@ -576,3 +576,10 @@ Speed curve of the Animations
 > animation-timing-function: ease-in
 > animation-timing-function: ease-out
 > animation-timing-function: ease-in-out
+
+Animation Fill Mode i.e. retaining styling from previous frames etc
+
+> animation-fill-mode: none
+> animation-fill-mode: forwards
+> animation-fill-mode: backwards
+> animation-fill-mode: both
