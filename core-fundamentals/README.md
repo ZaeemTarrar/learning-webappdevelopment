@@ -102,3 +102,22 @@ address = {
     residential: false
 }
 ```
+
+## Operators
+
+### Arithmetic Operators
+
+`+` **Addition**
+`-` **Subtraction**
+`*` **Multiplication**
+`/` **Division**
+`%` **Modulus** ( Remainder operator )
+
+### Assignment Operators
+
+`=` **Assignment**
+`+=` **Add and Assign**
+`-=` **Subtract and Assign**
+`*=` **Multiply and Assign**
+`/=` **Divide and Assign**
+`%=` **Extract Remainder and Assign**
