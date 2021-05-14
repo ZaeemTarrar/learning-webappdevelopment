@@ -121,12 +121,43 @@ address = {
 
 `=` **Assignment**
 
-`+=` **Add and Assign**
+`+ =` **Add and Assign**
 
-`-=` **Subtract and Assign**
+`- =` **Subtract and Assign**
 
-`*=` **Multiply and Assign**
+`* =` **Multiply and Assign**
 
-`/=` **Divide and Assign**
+`/ =` **Divide and Assign**
 
-`%=` **Extract Remainder and Assign**
+`% =` **Extract Remainder and Assign**
+
+### Equality Operators
+
+`==` **Match the Value**
+`===` **Match the Value and Datatype**
+
+### In-equality Operators
+
+`!=` **Does Value Not Match**
+`!==` **Does the Value Not Match and Datatype is Same**
+
+```
+!(true) = false
+```
+
+### Conditional Operators
+
+`<` **Less Than**
+`>` **Greater Than**
+`<=` **Less Than and Equal to**
+`>=` **Greater Than Equal to**
+
+## Logical Operators
+
+`&` **AND Operator**
+
+TRUE only if both conditions/values are true
+
+`|` **OR Operator**
+
+TRUE if any condition/value is true
