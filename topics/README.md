@@ -525,3 +525,46 @@ transition-timing-function: ease-in-out;
 ```
 transition: width 2s linear 1s;
 ```
+
+### Animations
+
+Frame Setting
+
+```
+@keyframes abcd {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+```
+
+```
+@keyframes abcd {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+```
+
+Usage
+
+```
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: abcd;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-iteration-count: 3; // default -> infinite
+}
+```
+
+Animation Directions
+
+> animation-direction: normal
+> animation-direction: reverse
+> animation-direction: alternate
+> animation-direction: alternate-reverse
