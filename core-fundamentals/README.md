@@ -285,7 +285,7 @@ while (i < 10) {
 }
 ```
 
-**D-While**
+**Do-While**
 
 ```
 do {
@@ -294,3 +294,31 @@ do {
 }
 while (i < 10);
 ```
+
+## Functions
+
+```
+function Multiply( p1, p2 ) {
+  return p1 * p2;   // The function returns the product of p1 and p2
+}
+var x = Multiply( 5, 10 );
+```
+
+```
+const add = ( a, b ) => {
+    return a + b;
+}
+var x = add( 2, 7 );
+```
+
+## Maths Methods
+
+## String Methods
+
+## Number Methods
+
+## Date Methods
+
+## Array Methods
+
+## Object Methods
