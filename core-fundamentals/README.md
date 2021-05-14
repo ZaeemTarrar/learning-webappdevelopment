@@ -20,7 +20,8 @@
 ## JS - Hello world
 
 ```
-alert("hello word")
+alert("hello word");
+console.log("hello world);
 ```
 
 ## Comments
@@ -53,6 +54,8 @@ Block Scoped
 ```
 let y = "hello word";
 ```
+
+**Note:** variable without `var` drags it to the global scope
 
 ## Data Types
 
@@ -688,4 +691,135 @@ Structure
 
 ```
 /pattern/modifiers;
+```
+
+```
+/school/i       // case-sensitive match
+/school/g       // global match
+/school/m       // multi-line match
+```
+
+## Exception Handling
+
+Trial Wraps
+
+```
+try {
+  // Some code here
+}
+catch(err) {
+  // Error
+}
+```
+
+```
+try {
+  // First
+}
+catch(err) {
+  // If Error in First
+}
+finally {
+  // Second
+}
+```
+
+Creating Custom Errors
+
+```
+throw "Too big";    // throw a text
+throw 500;          // throw a number
+```
+
+## Strict Mode
+
+`strict-mode` written at the top of the script
+
+## `This` in Objects
+
+```
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+```
+
+## Classes & Objects
+
+```
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    let date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+let myCar = new Car("Ford", 2014);
+```
+
+## JavaScript Object Notation ( JSON )
+
+It is written in files with `.json` extension
+
+**Format**
+
+```
+{
+"employees":[
+    {
+      "firstName":"John",
+      "lastName":"Doe"
+    },
+    {
+        "firstName":"Anna",
+        "lastName":"Smith"
+    },
+    {
+        "firstName":"Peter",
+        "lastName":"Jones"
+    }
+]
+}
+```
+
+## Time Laps and Intervals
+
+`1000` = 1 Second
+
+Wait Method before specific code
+`setTimeout( function, time )`
+
+setTimout( () => {
+// Some Code here
+// Will run after the given time
+}, 1000 )
+
+Loop over a particular code
+`setInterval( function, time )`
+
+setInterval( () => {
+// Some Code here
+// Will run after the given time
+}, 1000 )
+
+Loop running after every second
+
+```
+var loop = setInterval( () => {
+    alert("hello world");
+}, 1000 );
+```
+
+Exiting Loop
+
+```
+clearInterval( loop );
 ```
