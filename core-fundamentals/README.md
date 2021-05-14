@@ -876,6 +876,11 @@ It is written in files with `.json` extension
 }
 ```
 
+**Conversions**
+
+`JSON.parse( Object )`
+`JSON.stringify( Object )`
+
 ## Time Laps and Intervals
 
 `1000` = 1 Second
