@@ -134,11 +134,13 @@ address = {
 ### Equality Operators
 
 `==` **Match the Value**
+
 `===` **Match the Value and Datatype**
 
 ### In-equality Operators
 
 `!=` **Does Value Not Match**
+
 `!==` **Does the Value Not Match and Datatype is Same**
 
 ```
@@ -148,8 +150,11 @@ address = {
 ### Conditional Operators
 
 `<` **Less Than**
+
 `>` **Greater Than**
+
 `<=` **Less Than and Equal to**
+
 `>=` **Greater Than Equal to**
 
 ## Logical Operators
