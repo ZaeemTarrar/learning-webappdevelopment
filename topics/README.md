@@ -402,3 +402,59 @@ translate( right, top )
 ```
 transform: translate( 50px, 100px )
 ```
+
+> `rotation`
+
+```
+rotate( degrees )
+```
+
+Clockwise
+
+```
+transform: rotate( 80deg )
+```
+
+Anti-Clockwise
+
+```
+transform: rotate( -45deg )
+```
+
+> `sizing`
+
+`1` is considered as the normal size, and `x` & `y` are grownth rates via x-axis & y-axis
+
+```
+transform: scale( x, y )
+tranform: scaleX( x )
+transform: scaleY( y )
+transform: scale( both )
+```
+
+```
+transform: scale( 3, 5 )
+```
+
+> `tilts`
+
+`x` & `y` are angles for left & right walls
+
+```
+transform: scew( x, y )
+transform: scew( both )
+transform: scewX( x )
+transform: scewY( y )
+```
+
+> `matrix`
+
+Matrix involces All the transformations togather
+
+```
+transform: matrix( scaleX , scewY, scewX, scaleY, translateX, translateY );
+```
+
+```
+transform: matrix(1, -0.3, 0, 1, 0, 0);
+```
