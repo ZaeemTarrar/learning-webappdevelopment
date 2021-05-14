@@ -579,7 +579,7 @@ Speed curve of the Animations
 
 Animation Fill Mode i.e. retaining styling from previous frames etc
 
-> animation-fill-mode: none
-> animation-fill-mode: forwards
-> animation-fill-mode: backwards
-> animation-fill-mode: both
+- animation-fill-mode: none
+- animation-fill-mode: forwards
+- animation-fill-mode: backwards
+- animation-fill-mode: both
