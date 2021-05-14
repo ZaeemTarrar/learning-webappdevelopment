@@ -564,18 +564,18 @@ div {
 
 Animation Directions
 
-> animation-direction: normal
-> animation-direction: reverse
-> animation-direction: alternate
-> animation-direction: alternate-reverse
+- animation-direction: normal
+- animation-direction: reverse
+- animation-direction: alternate
+- animation-direction: alternate-reverse
 
 Speed curve of the Animations
 
-> animation-timing-function: linear
-> animation-timing-function: ease
-> animation-timing-function: ease-in
-> animation-timing-function: ease-out
-> animation-timing-function: ease-in-out
+- animation-timing-function: linear
+- animation-timing-function: ease
+- animation-timing-function: ease-in
+- animation-timing-function: ease-out
+- animation-timing-function: ease-in-out
 
 Animation Fill Mode i.e. retaining styling from previous frames etc
 
