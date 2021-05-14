@@ -568,3 +568,11 @@ Animation Directions
 > animation-direction: reverse
 > animation-direction: alternate
 > animation-direction: alternate-reverse
+
+Speed curve of the Animations
+
+> animation-timing-function: linear
+> animation-timing-function: ease
+> animation-timing-function: ease-in
+> animation-timing-function: ease-out
+> animation-timing-function: ease-in-out
