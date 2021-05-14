@@ -171,7 +171,7 @@ Selection of attribute starting with a specific word
 Selection of attribute beginning with a specific value
 
 ```
-[class|^="top"] {
+[class^="top"] {
   background: yellow;
 }
 ```
@@ -179,7 +179,15 @@ Selection of attribute beginning with a specific value
 Selection of attribute ending with a specific value
 
 ```
-[class|$="top"] {
+[class$="top"] {
+  background: yellow;
+}
+```
+
+Selection of attribute including a specific value
+
+```
+[class*="top"] {
   background: yellow;
 }
 ```
@@ -200,6 +208,14 @@ To force a cascaded style, we use `!important` key word
 p {
   background-color: green !important;
 }
+```
+
+## Page Dimensions/Scaling Control
+
+```
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 ```
 
 ## Basic Topics
@@ -277,6 +293,17 @@ Flex Responsiveness by wrapping it
 }
 ```
 
+# Display - Grids
+
+```
+display: grid;
+```
+
+```
+grid-template-columns: auto auto auto auto;
+grid-template-columns: 80px 200px auto 50px;
+```
+
 ### Borders
 
 Setting up border by: `width` `type` `color`
@@ -301,6 +328,9 @@ display: block;
 display: inline-block;
 display: inline;
 display: none;
+display: flex;
+display: table;
+...
 ```
 
 ### Visibility
@@ -625,7 +655,7 @@ img {
 - fill
 - none
 
-### Font Styling
+### Font/Text Styling
 
 ```
 font-weight: bold;
@@ -644,6 +674,42 @@ font-size: 14px;
 
 ```
 font-style: italic;
+```
+
+```
+justify-content: space-around;
+justify-content: space-between;
+justify-content: center;
+justify-content: start;
+justify-content: end;
+```
+
+```
+line-height: 30px;
+letter-spacing: 2px;
+word-spacing: 10px;
+```
+
+```
+text-decoration: none;
+text-decoration: underline;
+text-decoration: line-through;
+text-decoration: line-over;
+```
+
+```
+text-align: left;
+text-align: right;
+text-align: center;
+```
+
+```
+align-content: center;
+align-content: space-evenly;
+align-content: space-around;
+align-content: space-between;
+align-content: start;
+align-content: end;
 ```
 
 ### Columns
@@ -748,6 +814,11 @@ Structure
 Example
 
 ```
+<link rel="stylesheet" media="screen and (min-width: 900px)" href="widescreen.css">
+<link rel="stylesheet" media="screen and (max-width: 600px)" href="smallscreen.css">
+```
+
+```
 @media screen and (min-width: 480px) {
   body {
     background-color: lightgreen;
@@ -781,5 +852,14 @@ Together
     font-size: 50px;
     padding: 50px;
   }
+}
+```
+
+### Auto Size Selections
+
+```
+p {
+  width: 200px;
+  height: auto;
 }
 ```
