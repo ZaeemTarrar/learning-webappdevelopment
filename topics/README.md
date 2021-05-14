@@ -458,3 +458,32 @@ transform: matrix( scaleX , scewY, scewX, scaleY, translateX, translateY );
 ```
 transform: matrix(1, -0.3, 0, 1, 0, 0);
 ```
+
+### 3D - Transform Methods
+
+> `rotation`
+
+```
+transform: rotateX()
+transform: rotateY()
+transform: rotateZ()
+transform: rotate3d(x,y,z)
+```
+
+> `position`
+
+```
+transform: translateX()
+transform: translateY()
+transform: translateZ()
+transform: translate3d(x,y,z)
+```
+
+> `sizing`
+
+```
+transform: scaleX()
+transform: scaleY()
+transform: scaleZ()
+transform: scale3d(x,y,z)
+```
