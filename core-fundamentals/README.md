@@ -358,9 +358,13 @@ Math.floor(Math.random() * 10);     // returns a random integer from 0 to 9
 String Complicated Symbols
 
 `/'` **Single Quote**
+
 `/"` **Double Quote**
+
 `//` **Slash**
+
 `/b` **Backspace**
+
 `/n` **New-line**
 
 Literal String
@@ -503,7 +507,50 @@ str = str.padEnd(4,0);
 // result is 5000
 ```
 
+Pulling Character & Character Codes
+
+```
+var str = "HELLO WORLD";
+str.charAt(0);            // returns H
+```
+
+```
+var str = "HELLO WORLD";
+str.charCodeAt(0);         // returns 72
+```
+
+String Splitting
+
+```
+var txt = "a,b,c,d,e";   // String
+txt.split(",");          // Split on commas
+txt.split(" ");          // Split on spaces
+txt.split("|");          // Split on pipe
+```
+
 ## Number Methods
+
+- .toString()
+- .toExponential( digits ) `Scientific notation`
+- .toFixed()
+
+```
+var x = 9.656;
+x.toFixed(0);           // returns 10
+x.toFixed(2);           // returns 9.66
+x.toFixed(4);           // returns 9.6560
+x.toFixed(6);           // returns 9.656000
+```
+
+- .toPrecision( rate )
+
+```
+var x = 9.656;
+x.toPrecision();        // returns 9.656
+x.toPrecision(2);       // returns 9.7
+x.toPrecision(4);       // returns 9.656
+x.toPrecision(6);       // returns 9.65600
+```
 
 ## Date Methods
 
