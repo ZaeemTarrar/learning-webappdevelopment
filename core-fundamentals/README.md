@@ -169,6 +169,8 @@ TRUE if any condition/value is true
 
 ## Conditional Statements
 
+**IF**
+
 ```
 if {
     // Some code here
@@ -194,3 +196,26 @@ if {
     // Some code here
 }
 ```
+
+**Switch**
+
+```
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+```
+
+**Terenary**
+
+```
+var cost = ( isMember ? '$2.00' : '$10.00' ) ;
+```
+
+## Loops
