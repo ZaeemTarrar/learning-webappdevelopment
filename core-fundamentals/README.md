@@ -564,6 +564,29 @@ x.toPrecision(6);       // returns 9.65600
 
 ## Date Methods
 
+Initializing
+
+```
+new Date()
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+new Date(milliseconds)
+new Date(date string)
+```
+
+- .toUTCString()
+- .toDateString()
+- .toISOString()
+- .getFullYear()
+- .getMonth()
+- .getDate()
+- .getHours()
+- .getMinutes()
+- .getSeconds()
+- .getMiliseconds()
+- .getTime()
+- .getDay()
+- .getNow()
+
 ## Array Methods
 
 ## Object Methods
