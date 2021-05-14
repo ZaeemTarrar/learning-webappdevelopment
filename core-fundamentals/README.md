@@ -416,6 +416,93 @@ var pos = str.lastIndexOf("locate",15);
 
 **Note:** `-1` Means Text was not found !
 
+`search position`
+
+```
+var str = "Please locate where 'locate' occurs!";
+var pos = str.search("locate");
+```
+
+`Sub String Extraction`
+
+```
+slice( start, end )
+substring( start, end )
+substr( start, length )
+```
+
+```
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(7, 13);
+```
+
+**Note:** `Negative-Value` Means to count from the end
+
+```
+var str = "Apple, Banana, Kiwi";
+var res = str.substring(7, 13);
+```
+
+```
+var str = "Apple, Banana, Kiwi";
+var res = str.substr(7, 6);
+```
+
+Replacing String / Sub String
+
+```
+str = "Please visit Microsoft!";
+var n = str.replace("Microsoft", "W3Schools");
+```
+
+Insensitive - Replacements
+
+```
+str = "Please visit Microsoft!";
+var n = str.replace(/MICROSOFT/i, "W3Schools");
+```
+
+All Replacements
+
+```
+str = "Please visit Microsoft and Microsoft!";
+var n = str.replace(/Microsoft/g, "W3Schools");
+```
+
+Case-Transform
+
+- .toUpperCase()
+- .toLowerCase()
+
+Joining Strings
+
+```
+var text1 = "Hello";
+var text2 = "World";
+var text3 = text1.concat(" ", text2);
+```
+
+String Trimming
+
+```
+var str = "       Hello World!        ";
+alert( str.trim() );
+```
+
+String Padding
+
+```
+let str = "5";
+str = str.padStart(4,0);
+// result is 0005
+```
+
+```
+let str = "5";
+str = str.padEnd(4,0);
+// result is 5000
+```
+
 ## Number Methods
 
 ## Date Methods
