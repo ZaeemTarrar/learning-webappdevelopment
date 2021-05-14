@@ -153,11 +153,11 @@ address = {
 
 `>` **Greater Than**
 
-`<=` **Less Than and Equal to**
+`< =` **Less Than and Equal to**
 
-`>=` **Greater Than Equal to**
+`> =` **Greater Than Equal to**
 
-## Logical Operators
+### Logical Operators
 
 `&` **AND Operator**
 
@@ -166,3 +166,31 @@ TRUE only if both conditions/values are true
 `|` **OR Operator**
 
 TRUE if any condition/value is true
+
+## Conditional Statements
+
+```
+if {
+    // Some code here
+}
+```
+
+```
+if {
+    // Some code here
+} else {
+    // Some code here
+}
+```
+
+```
+if {
+    // Some code here
+} else if {
+    // ...
+} else if {
+    // ...
+} else {
+    // Some code here
+}
+```
