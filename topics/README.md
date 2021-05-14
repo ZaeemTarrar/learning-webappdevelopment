@@ -762,3 +762,24 @@ Example
   }
 }
 ```
+
+Portrait / Landscape
+
+```
+@media only screen and (orientation: landscape) {
+  body {
+    background-color: lightblue;
+  }
+}
+```
+
+Together
+
+```
+@media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {
+  div {
+    font-size: 50px;
+    padding: 50px;
+  }
+}
+```
