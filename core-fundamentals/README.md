@@ -56,23 +56,45 @@ let y = "hello word";
 
 ## Data Types
 
-> String
-> Number
-> Boolean
-> Array/List
-> Object
+- String
+- Number
+- Boolean
+- Array/List
+- Object
 
 ## Declaration & Initialization
 
+String
+
 ```
 myName = "Zaeem Hassan Tarrar";
+```
+
+Number
+
+```
 Age = 24;
+```
+
+Boolean
+
+```
 isMale = true;
+```
+
+Array/List
+
+```
 favouriteFruits = [
     "apples",
     "mangoes",
     "oranges"
 ]
+```
+
+Object
+
+```
 address = {
     street: 2,
     house: 44,
