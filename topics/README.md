@@ -704,3 +704,61 @@ border: 1px solid #000;
 outline: 2px dashed red;
 outline-offset: 15px;
 ```
+
+To include the padding & border in the width & height of the box
+
+```
+box-sizing: border-box;
+```
+
+### Setting Variables
+
+Initialization
+
+```
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+.container {
+  --fontsize: 13px;
+}
+```
+
+Usage
+
+```
+h2 { border-bottom: 2px solid var(--blue); }
+```
+
+### Media Queries ( Web Responsiveness Control )
+
+Structure
+
+```
+@media not|only mediatype and (expressions) {
+  CSS-Code;
+}
+```
+
+```
+<link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">
+```
+
+Example
+
+```
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+```
+
+```
+@media screen and (max-width: 700px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+```
