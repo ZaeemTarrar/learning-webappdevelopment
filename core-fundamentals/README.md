@@ -247,7 +247,7 @@ for (x in person) {
 ```
 
 ```diff
-var numbers = [45, 4, 9, 16, 25];
++var numbers = [45, 4, 9, 16, 25];
 
 var txt = "";
 var x;
