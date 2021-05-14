@@ -110,6 +110,12 @@ address = {
 }
 ```
 
+Deleting Entity
+
+```
+delete address.city
+```
+
 ## Operators
 
 ### Arithmetic Operators
@@ -331,6 +337,131 @@ const add = ( a, b ) => {
     return a + b;
 }
 var x = add( 2, 7 );
+```
+
+`Asyncronous Methods`
+
+These methods wait till the code is completely executed, however normally javascript code
+keeps running the next line inspite of waiting for to get executed completely
+
+```
+var x = async () => {
+
+}
+asyncfunction run() {
+    await x();
+}
+```
+
+`Callback Functions`
+
+```
+let A = () => {}
+let B = ( cb ) => {
+    if( true ) {
+        cb();
+    } else {
+
+    }
+}
+B( A );
+```
+
+## Exception Handling
+
+Trial Wraps
+
+```
+try {
+  // Some code here
+}
+catch(err) {
+  // Error
+}
+```
+
+```
+try {
+  // First
+}
+catch(err) {
+  // If Error in First
+}
+finally {
+  // Second
+}
+```
+
+Creating Custom Errors
+
+```
+throw "Too big";    // throw a text
+throw 500;          // throw a number
+```
+
+## Strict Mode
+
+`strict-mode` written at the top of the script
+
+## `This` in Objects
+
+```
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+```
+
+## Classes & Objects
+
+```
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    let date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+let myCar = new Car("Ford", 2014);
+```
+
+`Inheritance`
+
+```
+class A {
+    constructor(name) {
+        this.name = name
+    }
+    get Name() {
+        return this.name;
+    }
+    set Name(x) {
+        this.name = x;
+    }
+    static hello() {
+        return "Hello!!";
+    }
+}
+class B extends A {
+    constructor(name,age) {
+        super(this.name);
+        this.age = age;
+    }
+    get Age() {
+        return this.age;
+    }
+    set Age(x) {
+        this.age = x;
+    }
+}
 ```
 
 ## Maths Methods
@@ -697,72 +828,6 @@ Structure
 /school/i       // case-sensitive match
 /school/g       // global match
 /school/m       // multi-line match
-```
-
-## Exception Handling
-
-Trial Wraps
-
-```
-try {
-  // Some code here
-}
-catch(err) {
-  // Error
-}
-```
-
-```
-try {
-  // First
-}
-catch(err) {
-  // If Error in First
-}
-finally {
-  // Second
-}
-```
-
-Creating Custom Errors
-
-```
-throw "Too big";    // throw a text
-throw 500;          // throw a number
-```
-
-## Strict Mode
-
-`strict-mode` written at the top of the script
-
-## `This` in Objects
-
-```
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  id       : 5566,
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
-  }
-};
-```
-
-## Classes & Objects
-
-```
-class Car {
-  constructor(name, year) {
-    this.name = name;
-    this.year = year;
-  }
-  age() {
-    let date = new Date();
-    return date.getFullYear() - this.year;
-  }
-}
-
-let myCar = new Car("Ford", 2014);
 ```
 
 ## JavaScript Object Notation ( JSON )

@@ -25,3 +25,11 @@ We access the html via `tags` `tag-names` `tag-id` `tag-classes` or `tag-attribu
 
 </html>
 ```
+
+### Console Methods
+
+`console.log()`
+`console.warning()`
+`console.info()`
+`console.error()`
+`console.clear()`
