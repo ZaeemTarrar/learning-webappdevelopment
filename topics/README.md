@@ -624,3 +624,41 @@ img {
 - contain
 - fill
 - none
+
+### Font Styling
+
+```
+font-weight: bold;
+font-weight: bolder;
+font-weight: 100;
+```
+
+```
+font-family: arial;
+font-family: comic sans ms, arial;
+```
+
+```
+font-size: 14px;
+```
+
+```
+font-style: italic;
+```
+
+### Columns
+
+```
+div {
+  column-count: 3;
+  column-width: 100px;
+  column-gap: 40px;
+  column-rule-style: solid;
+  column-rule-width: 1px;
+  column-rule-color: lightblue;
+  /* column-rule: 1px solid lightblue; */
+}
+h2 {
+  column-span: all;
+}
+```
