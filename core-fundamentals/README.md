@@ -27,4 +27,56 @@ alert("hello word")
 
 ```
 // Comments
+/*
+    Multi-line
+*/
+```
+
+## Variables / Constants
+
+**Constant** value can not be changed
+
+```
+const x = "hello word";
+```
+
+**Variable** value can be changed
+
+Function Scoped
+
+```
+var x = "hello word";
+```
+
+Block Scoped
+
+```
+let y = "hello word";
+```
+
+## Data Types
+
+> String
+> Number
+> Boolean
+> Array/List
+> Object
+
+## Declaration & Initialization
+
+```
+myName = "Zaeem Hassan Tarrar";
+Age = 24;
+isMale = true;
+favouriteFruits = [
+    "apples",
+    "mangoes",
+    "oranges"
+]
+address = {
+    street: 2,
+    house: 44,
+    city: "lahore",
+    residential: false
+}
 ```
