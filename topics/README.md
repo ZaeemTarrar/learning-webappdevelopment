@@ -944,6 +944,7 @@ Together
 p {
   width: 200px;
   height: auto;
+  background-color: gold;
 }
 ```
 
