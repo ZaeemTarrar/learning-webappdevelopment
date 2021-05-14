@@ -684,7 +684,9 @@ resize: none;
 Structure
 
 `top` `right` `bottom` `left`
+
 `top-bottom` `right-left`
+
 `all`
 
 Examples
