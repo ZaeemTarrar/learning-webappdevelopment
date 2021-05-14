@@ -41,6 +41,13 @@ var person = prompt("Please enter your name", "Harry Potter");
 alert( person );        // string
 ```
 
+### Browser Printing
+
+```
+document.write()
+document.writeln()
+```
+
 ### The Pure DOM
 
 **Accessing the Html Tag References in Javascript**
@@ -55,6 +62,22 @@ let Ref = document.getElementsByClassName("box");
 
 ```
 var x = document.activeElement.tagName;
+```
+
+**Html Creations**
+
+Attribute
+
+```
+var att = Ref.createAttribute("class");
+att.value = "democlass";
+```
+
+Comment
+
+```
+var c = document.createComment("My personal comments");
+document.body.appendChild(c);
 ```
 
 **Event Listener**
@@ -78,6 +101,15 @@ document.addEventListener("click", function(){
 - style.padding
 - style.margin
 - style.border.width
+- ...
+
+- onClick()
+- onDoubleClick()
+- onFocus()
+- onBlur()
+- onMouseUp()
+- onMouseLeave()
+- onDrag()
 - ...
 
 ### Browser APIs
