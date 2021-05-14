@@ -219,3 +219,39 @@ var cost = ( isMember ? '$2.00' : '$10.00' ) ;
 ```
 
 ## Loops
+
+**For**
+
+```
+for (var i = 0; i < 10; i++) {
+  alert(i);
+}
+```
+
+```
+for (var i = 0; len = 4, i < len; i++) {
+  alert(i);
+}
+```
+
+**For-in**
+
+```
+var person = {fname:"John", lname:"Doe", age:25};
+
+var text = "";
+var x;
+for (x in person) {
+  text += person[x];
+}
+```
+
+```diff
++ var numbers = [45, 4, 9, 16, 25];
+
+var txt = "";
+var x;
+for (x in numbers) {
+  txt += numbers[x] + "<br>";
+}
+```
