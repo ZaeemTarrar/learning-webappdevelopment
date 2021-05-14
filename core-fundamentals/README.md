@@ -59,8 +59,11 @@ let y = "hello word";
 - String
 - Number
 - Boolean
+- Date
 - Array/List
 - Object
+
+`null` `""` `0` `undefined` `NaN`
 
 ## Declaration & Initialization
 
@@ -167,6 +170,14 @@ TRUE only if both conditions/values are true
 `|` **OR Operator**
 
 TRUE if any condition/value is true
+
+`^` **XOR Operator**
+
+TRUE if any condition/value are different
+
+`~` **NOT Operator**
+
+Inverts All Bits
 
 ## Conditional Statements
 
@@ -296,6 +307,11 @@ do {
 while (i < 10);
 ```
 
+**Loop-Breaks**
+
+- continue `iternation starts again`
+- break `loop stops iterating`
+
 ## Functions
 
 ```
@@ -304,6 +320,8 @@ function Multiply( p1, p2 ) {
 }
 var x = Multiply( 5, 10 );
 ```
+
+`() => {}` Lambda Functions
 
 ```
 const add = ( a, b ) => {
@@ -576,6 +594,7 @@ new Date(date string)
 - .toUTCString()
 - .toDateString()
 - .toISOString()
+
 - .getFullYear()
 - .getMonth()
 - .getDate()
@@ -587,6 +606,86 @@ new Date(date string)
 - .getDay()
 - .getNow()
 
+- .setDate()
+- .setFullYear()
+- .setHours()
+- .setMiliseconds()
+- .setMinutes()
+- .setMonths()
+- .setSeconds()
+- .setTime()
+
 ## Array Methods
 
-## Object Methods
+```
+var numbers = [ 1, 2, 3, 4 ]
+var numbers = new Array( 1, 2, 3, 4 )
+```
+
+- list.length()
+- list.sort()
+- list.forEach( function )
+
+- list.push()
+- list.pop()
+- list.shift()
+- list.unshift()
+
+- join( seperator )
+- splice()
+
+```
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");
+```
+
+- concat()
+
+```
+var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias", "Linus"];
+var myChildren = myGirls.concat(myBoys);   // Concatenates (joins) myGirls and myBoys
+```
+
+```
+ar arr1 = ["Cecilie", "Lone"];
+var arr2 = ["Emil", "Tobias", "Linus"];
+var arr3 = ["Robin", "Morgan"];
+var myChildren = arr1.concat(arr2, arr3);   // Concatenates arr1 with arr2 and arr3
+```
+
+- slice( digit )
+- toString()
+- sort()
+- reverse()
+- map()
+
+```
+var numbers1 = [45, 4, 9, 16, 25];
+var numbers2 = numbers1.map( function(value, index, array) {
+  return value * 2;
+} );
+```
+
+Checks
+
+```
+var arr = []
+typeof arr
+```
+
+```
+Array.isArray(fruits);   // returns true
+```
+
+```
+fruits instanceof Array;   // returns true
+```
+
+## Regular expressions
+
+Structure
+
+```
+/pattern/modifiers;
+```
