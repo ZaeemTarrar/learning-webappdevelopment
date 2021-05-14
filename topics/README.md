@@ -583,3 +583,43 @@ Animation Fill Mode i.e. retaining styling from previous frames etc
 - animation-fill-mode: forwards
 - animation-fill-mode: backwards
 - animation-fill-mode: both
+
+### Image Reflections
+
+Reflection Direction
+
+```
+-webkit-box-reflect: below
+-webkit-box-reflect: right
+```
+
+Reflection with offset
+
+```
+-webkit-box-reflect: below 20px;
+```
+
+Detailed faded Reflection
+
+```
+-webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+```
+
+### Image Fits
+
+Managing Aspect ratio and fit-ability etc
+
+```
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+```
+
+More Values
+
+- cover
+- contain
+- fill
+- none
