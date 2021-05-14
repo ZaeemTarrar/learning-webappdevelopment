@@ -662,3 +662,43 @@ h2 {
   column-span: all;
 }
 ```
+
+### Resizable Boxes
+
+```
+resize: horizontal;
+resize: vertical;
+resize: both;
+resize: none;
+```
+
+### Content Box Layers
+
+1. Content
+2. Padding
+3. Border
+4. Outline-Offset
+5. Outline
+6. Margin
+
+Structure
+
+`top` `right` `bottom` `left`
+`top-bottom` `right-left`
+`all`
+
+Examples
+
+```
+padding: 10px 13px 15px 12px;
+padding: 10px 20px;
+padding: 15px;
+```
+
+```
+padding: 10px;
+margin: 10px;
+border: 1px solid #000;
+outline: 2px dashed red;
+outline-offset: 15px;
+```
