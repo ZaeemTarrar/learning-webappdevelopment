@@ -1,5 +1,25 @@
 ## Css Combinators
 
+### Universal
+
+Selects All
+
+```
+* {
+  color: red;
+}
+```
+
+### Comma
+
+Style more than one
+
+```
+p, h1 {
+  color: blue;
+}
+```
+
 ### Descendant Selector
 
 Styles all the second elements inside the first element
@@ -200,6 +220,55 @@ input[type=password]
 input[type=number]
 ```
 
+```
+input:checked
+input:default
+input:disabled
+input:enabled
+input:focus
+input:in-range
+input:valid
+input:invalid
+input:optional
+input:out-of-range
+input:placeholder
+input:read-only
+input:read-write
+input:required
+```
+
+Selecting Empty Tags
+
+```
+p:empty
+```
+
+Selecting with `Not`
+
+```
+:not(p)
+```
+
+Selecting Patterned Series
+
+```
+p:nth-child(2)
+p:nth-last-child(2)
+p:nth-of-type(2)
+```
+
+Selecting in Fullscreen Mode
+
+```
+:fullscreen
+```
+
+Main Root Element
+
+```
+:root
+```
+
 ## Force Styling
 
 To force a cascaded style, we use `!important` key word
@@ -302,6 +371,20 @@ display: grid;
 ```
 grid-template-columns: auto auto auto auto;
 grid-template-columns: 80px 200px auto 50px;
+```
+
+Starts at Column 1 and ends before column 5
+
+```
+grid-column: 1 / 5;
+grid-column: 1 / span 3;
+```
+
+Starts at Row 1 and ends before row 5
+
+```
+grid-row: 1 / 5;
+grid-row: 1 / span 3;
 ```
 
 ### Borders
