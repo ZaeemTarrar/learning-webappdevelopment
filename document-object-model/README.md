@@ -34,6 +34,52 @@ We access the html via `tags` `tag-names` `tag-id` `tag-classes` or `tag-attribu
 `console.error()`
 `console.clear()`
 
+### Browser Dialogs
+
+```
+var person = prompt("Please enter your name", "Harry Potter");
+alert( person );        // string
+```
+
+### The Pure DOM
+
+**Accessing the Html Tag References in Javascript**
+
+```
+let Ref = document.getElementsByTagName("h1");
+let Ref = document.getElementById("mainPage");
+let Ref = document.getElementsByClassName("box");
+```
+
+**Accessing Curruntly Active Html Element/Tag**
+
+```
+var x = document.activeElement.tagName;
+```
+
+**Event Listener**
+
+```
+document.addEventListener("click", function(){
+  document.getElementById("demo").innerHTML = "Hello World";
+});
+```
+
+**BaseUrl** `document.baseURI`
+
+**Reference Methods**
+
+- innerHTML
+
+`Style Methods uses Css Methods in Camel case`
+
+- style.backgroundColor
+- style.color
+- style.padding
+- style.margin
+- style.border.width
+- ...
+
 ### Browser APIs
 
 **Location APIs**
