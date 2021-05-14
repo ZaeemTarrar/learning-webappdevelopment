@@ -1,3 +1,5 @@
+# Javascript - Core Fundamentals
+
 ## Javascript injection in Html5
 
 ```
@@ -10,7 +12,7 @@
 
 </body>
 <script type="text/javascript" >
-    alert("hello world");
+    // Javascript code here
 </script>
 </html>
 ```
@@ -18,5 +20,11 @@
 ## JS - Hello world
 
 ```
-alert
+alert("hello word")
+```
+
+## Comments
+
+```
+// Comments
 ```
