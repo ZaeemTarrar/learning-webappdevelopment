@@ -487,3 +487,41 @@ transform: scaleY()
 transform: scaleZ()
 transform: scale3d(x,y,z)
 ```
+
+### Transitions
+
+Structure
+
+```
+transition: property time(seconds) ...
+transition-delay: time(seconds)
+transition-duration: time(seconds)
+```
+
+Example
+
+```
+p {
+  width: 100px;
+  height: 200px;
+  transition: width 1s, height 2s;
+}
+p:hover {
+  width: 500px;
+  height: 500px;
+}
+```
+
+Transition timing functions
+
+```
+transition-timing-function: linear;
+transition-timing-function: ease;
+transition-timing-function: ease-in;
+transition-timing-function: ease-out;
+transition-timing-function: ease-in-out;
+```
+
+```
+transition: width 2s linear 1s;
+```
