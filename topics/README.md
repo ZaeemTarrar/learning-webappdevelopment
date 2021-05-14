@@ -390,3 +390,15 @@ text-shadow: 0px 0px 10px red;
 box-shadow: 5px 5px 20px blue;
 box-shadow: 0px 0px 10px green inset;
 ```
+
+### 2D - Transform Methods
+
+> `position`
+
+```
+translate( right, top )
+```
+
+```
+transform: translate( 50px, 100px )
+```
