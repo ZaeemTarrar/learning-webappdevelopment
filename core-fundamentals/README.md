@@ -246,12 +246,51 @@ for (x in person) {
 }
 ```
 
-```diff
-+var numbers = [45, 4, 9, 16, 25];
+```
+var numbers = [45, 4, 9, 16, 25];
 
 var txt = "";
 var x;
 for (x in numbers) {
   txt += numbers[x] + "<br>";
 }
+```
+
+**For-Each**
+
+```
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach( function( value, index, array ) {
+    // Some code here
+});
+```
+
+**For-of**
+
+```
+let cars = ["BMW", "Volvo", "Mini"];
+let text = "";
+
+for (let x of cars) {
+  text += x;
+}
+```
+
+**While**
+
+```
+while (i < 10) {
+  text += "The number is " + i;
+  i++;
+}
+```
+
+**D-While**
+
+```
+do {
+  text += "The number is " + i;
+  i++;
+}
+while (i < 10);
 ```
