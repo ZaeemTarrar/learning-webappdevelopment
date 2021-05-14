@@ -552,6 +552,16 @@ x.toPrecision(4);       // returns 9.656
 x.toPrecision(6);       // returns 9.65600
 ```
 
+- Converting to Numbers
+
+`Number()` `parseInt()` `parseFloat()`
+
+- Number Limits
+
+`Number.MAX_VALUE` `Number.MIN_VALUE`
+`POSITIVE_INFINITY` `POSITIVE_INFINITY`
+`Number.NaN`
+
 ## Date Methods
 
 ## Array Methods
