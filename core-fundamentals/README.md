@@ -116,6 +116,15 @@ Deleting Entity
 delete address.city
 ```
 
+## Add Variables to Strings
+
+`${variable}`
+
+```
+let price = 500;
+let sentence = "I bought the cat for about ${price} rupees";
+```
+
 ## Operators
 
 ### Arithmetic Operators
