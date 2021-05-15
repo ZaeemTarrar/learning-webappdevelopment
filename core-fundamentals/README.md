@@ -197,6 +197,20 @@ TRUE if any condition/value are different
 
 Inverts All Bits
 
+## Spread Operator (...)
+
+It Copies all the data from `Array` or `Object` to another location
+
+```
+var a = [1,2,3,4,5];
+var b = {
+  name: "zaeem",
+  age: 24
+}
+var new_a = [...a];
+var new_b = {...b};
+```
+
 ## Conditional Statements
 
 **IF**

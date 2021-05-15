@@ -528,3 +528,16 @@ let loop = setInterval( () => {
 }, 1000 );
 
 // <===== =====>
+
+var a = [1,2,3,4,5];
+var b = {
+  name: "zaeem",
+  age: 24
+}
+var new_a = [...a];
+var new_b = {...b};
+var c = { ...b, digits: [...a] }
+
+console.log("Spread Operator - New A: ", new_a);
+console.log("Spread Operator - New B: ", new_b);
+console.log("Spread Operator - C: ", c);
