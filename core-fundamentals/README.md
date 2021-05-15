@@ -461,7 +461,7 @@ class A {
 }
 class B extends A {
     constructor(name,age) {
-        super(this.name);
+        super(name);
         this.age = age;
     }
     get Age() {
@@ -471,6 +471,31 @@ class B extends A {
         this.age = x;
     }
 }
+```
+
+## Function Objects
+
+```
+var Vehicle = function(name,model) {
+    // Public
+    this.name = name;
+    // Private
+    var model = model;
+
+    // Public
+    this.getName = function() {
+        return this.name;
+	}
+    this.setName = function(x) {
+        this.name = x;
+	}
+    // Private
+    var getModel = function() {
+        return model;
+	}
+}
+
+var BMW = new Vehicle("BMW","2020");
 ```
 
 ## Promises
@@ -536,6 +561,14 @@ Math.floor(Math.random() * 10);     // returns a random integer from 0 to 9
 ```
 
 ## String Methods
+
+String Concatination
+
+```
+var x = "Hello";
+var y = "World";
+var z = x + " " + y;
+```
 
 String Complicated Symbols
 
