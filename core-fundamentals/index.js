@@ -408,7 +408,7 @@ console.log("Random Number: ",RandomNumber);
 
 // <===== =====>
 
-console.clear();
+// console.clear();
 
 var word1 = " a quick brown fox jumped over the lazy dogs ";
 var word2 = new String("a quick brown fox jumped over the lazy dogs");
