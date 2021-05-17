@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Area Of Triangle </title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Comic Sans MS;
+        }
+        body {
+            padding: 20px;
+        }
+        #result {
+            display: none;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #666;
+            border-radius: 5px;
+
+        }
+        #a>label, #b>label, #c>label {
+            font-size: 20px;
+
+        }
+        #btn > button {
+            padding: 10px;
+            background: #369;
+            color: #fff;
+            margin: 10px;
+            border: 0px;
+            border-radius: 5px;
+            transition: background-color 1s, transform;
+        }
+        #btn > button:hover {
+            background-color: blue;
+        }
+        #btn > button:active {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="mainPage">
+        <div>
+            <h1> Enter Side Lengths of the Triangle </h1>
+            <br>
+        </div>
+        <div id="a" >
+            <label> Side "A" </label><br>
+            <input type="number" placeholder="Side A" >
+        </div>
+        <div id="b" >
+            <label> Side "B" </label> <br>
+            <input type="number" placeholder="Side B" >
+        </div>
+        <div id="c" >
+            <label> Side "C" </label> <br>
+            <input type="number" placeholder="Side C" >
+        </div>
+        <div id="btn" >
+            <button> Calculate </button>
+        </div>
+        <div id="result" >
+            <h2> Result </h2>
+            <p></p>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="./index.js" defer ></script>
+
+</html>

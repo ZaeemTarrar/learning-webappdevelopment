@@ -541,3 +541,17 @@ var c = { ...b, digits: [...a] }
 console.log("Spread Operator - New A: ", new_a);
 console.log("Spread Operator - New B: ", new_b);
 console.log("Spread Operator - C: ", c);
+
+// <===== =====>
+
+function countDown( timeLeft = 0 ) {
+    console.log(`Time Left: ${timeLeft}`);
+    timeLeft--;
+    if( timeLeft + 1 > 0 ) {
+        countDown(timeLeft);
+    }
+}
+
+countDown(10);
+
+// <===== =====>

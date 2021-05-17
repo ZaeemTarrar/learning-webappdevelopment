@@ -103,6 +103,7 @@ document.addEventListener("click", function(){
 - style.border.width
 - ...
 
+- onLoad()
 - onClick()
 - onDoubleClick()
 - onFocus()
