@@ -970,3 +970,34 @@ Exiting Loop
 ```
 clearInterval( loop );
 ```
+
+## Object And Array Destructuring
+
+**Object**
+
+```
+var user = {
+  name: "zaeem",
+  age: 24
+}
+var { name, age } = user;
+var { name as x, age as y } = user;
+```
+
+**Array**
+
+```
+var numbers = [ 2,5,9 ]
+var [ x, y, z ] = numbers;
+```
+
+```
+var numbers = [ 2,5,9,3,6,3,6,8,3,6 ]
+var [ x, y, z, ...a ] = numbers;
+```
+
+### Using Destructuring
+
+```
+[guest, admin] = [admin, guest];
+```
