@@ -43,13 +43,13 @@ const x = "hello word";
 
 **Variable** value can be changed
 
-Function / Global Scoped
+Functional / Global Scoped. `Var` has no Block Scope
 
 ```
 var x = "hello word";
 ```
 
-Block Scoped
+Blocked Scope
 
 ```
 let y = "hello word";
@@ -110,7 +110,7 @@ address = {
 }
 ```
 
-Deleting Entity
+Deleting Entity / Garbage Collection and Cleaning
 
 ```
 delete address.city
