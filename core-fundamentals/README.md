@@ -43,7 +43,7 @@ const x = "hello word";
 
 **Variable** value can be changed
 
-Function Scoped
+Function / Global Scoped
 
 ```
 var x = "hello word";
@@ -1000,4 +1000,174 @@ var [ x, y, z, ...a ] = numbers;
 
 ```
 [guest, admin] = [admin, guest];
+```
+
+### Optional Chaining Operator
+
+`?.`
+
+```
+var age = person?.age;
+```
+
+```
+let result = someInterface.customMethod?.();
+```
+
+### Chaining of Methods / Functions
+
+```
+const dog = {
+  is: null,
+  log: () => console.log(this.is),
+  bark() {
+    this.is = "woofing";
+    this.log();
+    return this;
+  },
+  walk() {
+    this.is = "walking";
+    this.log();
+    return this;
+  },
+  eat() {
+    this.is = "eating";
+    this.log();
+    return this;
+  }
+};
+
+dog
+  .bark()
+  .eat()
+  .walk();
+```
+
+```
+class Car {
+   constructor() {
+      this.wheels = 4
+      this.doors = 4
+      this.topSpeed = 100
+      this.feulCapacity = "400 Litres"
+   }
+   setWheels(w) {
+      this.wheels = w;
+      return this;
+   }
+   setDoors(d) {
+      this.doors = d;
+      return this;
+   }
+   setTopSpeed(t) {
+      this.topSpeed = t;
+      return this;
+   }
+   setFeulCapacity(fc) {
+      this.feulCapacity = fc;
+      return this;
+   }
+   displayCarProps() {
+      console.log(`Your car has ${this.wheels} wheels,\
+      ${this.doors} doors with a top speed of ${this.topSpeed}\
+      and feul capacity of ${this.feulCapacity}`)
+   }
+}
+
+let sportsCar = new Car()
+   .setDoors(2)
+   .setTopSpeed(250)
+   .setFeulCapacity("600 Litres")
+   .displayCarProps()
+```
+
+### Prototypes of Functions
+
+`FunctionName`.`Prototype`.`Method/Property` = `Value`
+
+```
+function Dog() {}
+
+Dog.prototype.is = null;
+Dog.prototype.log = function() {
+  console.log(this.is);
+};
+Dog.prototype.bark = function() {
+  this.is = "woofing";
+  this.log();
+  return this;
+};
+Dog.prototype.walk = function() {
+  this.is = "walking";
+  this.log();
+  return this;
+};
+Dog.prototype.eat = function() {
+  this.is = "eating";
+  this.log();
+  return this;
+};
+const dog = new Dog();
+dog
+  .bark()
+  .eat()
+  .walk();
+```
+
+### The New Function
+
+```
+let func = new Function ([arg1, arg2, ...argN], functionBody);
+```
+
+```
+let sum = new Function('a', 'b', 'return a + b');
+alert( sum(1, 2) ); // 3
+```
+
+```
+function getFunc() {
+  let value = "test";
+
+  let func = function() { alert(value); };
+
+  return func;
+}
+
+getFunc()(); // "test", from the Lexical Environment of getFunc
+```
+
+### Data Caching
+
+This is normally done to improve performance
+
+```
+function slow(x) {
+  // there can be a heavy CPU-intensive job here
+  alert(`Called with ${x}`);
+  return x;
+}
+
+function cachingDecorator(func) {
+  let cache = new Map();
+
+  return function(x) {
+    if (cache.has(x)) {    // if there's such key in cache
+      return cache.get(x); // read the result from it
+    }
+
+    let result = func(x);  // otherwise call func
+
+    cache.set(x, result);  // and cache (remember) the result
+    return result;
+  };
+}
+
+slow = cachingDecorator(slow);
+
+alert( slow(1) ); // slow(1) is cached and the result returned
+alert( "Again: " + slow(1) ); // slow(1) result returned from cache
+
+alert( slow(2) ); // slow(2) is cached and the result returned
+alert( "Again: " + slow(2) ); // slow(2) result returned from cache
 ```

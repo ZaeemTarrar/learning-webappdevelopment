@@ -555,3 +555,10 @@ function countDown( timeLeft = 0 ) {
 countDown(10);
 
 // <===== =====>
+
+const asd = {
+    name: "tarzan",
+    sound: "alohamorah"
+}
+var w = asd?.age;
+console.log("Optional Chaining Operator: ",w);
