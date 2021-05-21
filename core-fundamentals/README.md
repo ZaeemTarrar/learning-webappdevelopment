@@ -89,6 +89,12 @@ Boolean
 isMale = true;
 ```
 
+Symbols ( Unique Idnetifiers )
+
+```
+Symbol("id") // "symbol"
+```
+
 Array/List
 
 ```
@@ -125,6 +131,14 @@ let price = 500;
 let sentence = "I bought the cat for about ${price} rupees";
 ```
 
+## Type Conversions
+
+Check type by `typeof`
+
+Following are the Methods Used for Type Conversions
+
+`Number()` `String()` `Boolean()`
+
 ## Operators
 
 ### Arithmetic Operators
@@ -138,6 +152,8 @@ let sentence = "I bought the cat for about ${price} rupees";
 `/` **Division**
 
 `%` **Modulus** ( Remainder operator )
+
+`**` **Exponentiation**
 
 ### Assignment Operators
 
@@ -209,6 +225,33 @@ var b = {
 }
 var new_a = [...a];
 var new_b = {...b};
+```
+
+### Extras
+
+```
+// output
+alert(obj);
+
+// using object as a property key
+anotherObj[obj] = 123;
+```
+
+```
+// explicit conversion
+let num = Number(obj);
+
+// maths (except binary plus)
+let n = +obj; // unary plus
+let delta = date1 - date2;
+
+// less/greater comparison
+let greater = user1 > user2;
+```
+
+```
+alert( 'a' > 'Z' ); // true
+alert( 'Österreich' > 'Zealand' ); // true
 ```
 
 ## Conditional Statements
@@ -320,6 +363,13 @@ for (let x of cars) {
 }
 ```
 
+```
+for (let char of "test") {
+  // triggers 4 times: once for each character
+  alert( char ); // t, then e, then s, then t
+}
+```
+
 **While**
 
 ```
@@ -343,6 +393,24 @@ while (i < 10);
 
 - continue `iternation starts again`
 - break `loop stops iterating`
+
+**Outer-Breaks**
+
+```
+outer: for (let i = 0; i < 3; i++) {
+
+  for (let j = 0; j < 3; j++) {
+
+    let input = prompt(`Value at coords (${i},${j})`, '');
+
+    // if an empty string or canceled, then break out of both loops
+    if (!input) break outer; // (*)
+
+    // do something with the value...
+  }
+}
+alert('Done!');
+```
 
 ## Functions
 
@@ -376,6 +444,33 @@ asyncfunction run() {
 }
 ```
 
+```
+async function f() {
+
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("done!"), 1000)
+  });
+
+  let result = await promise; // wait until the promise resolves (*)
+
+  alert(result); // "done!"
+}
+
+f();
+```
+
+```
+class Waiter {
+  async wait() {
+    return await Promise.resolve(1);
+  }
+}
+
+new Waiter()
+  .wait()
+  .then(alert); // 1 (this is the same as (result => alert(result)))
+```
+
 `Callback Functions`
 
 ```
@@ -388,6 +483,47 @@ let B = ( cb ) => {
     }
 }
 B( A );
+```
+
+```
+function showMessage(from, text = anotherFunction()) {
+  // anotherFunction() only executed if no text given
+  // its result becomes the value of text
+}
+```
+
+```
+function doNothing() {
+  return;
+}
+
+alert( doNothing() === undefined ); // true
+```
+
+```
+function User() {
+  alert(new.target);
+}
+
+// without "new":
+User(); // undefined
+
+// with "new":
+new User(); // function User { ... }
+```
+
+```
+let user = new User; // <-- no parentheses
+// same as
+let user = new User();
+```
+
+```
+function Rabbit() {}
+// by default:
+// Rabbit.prototype = { constructor: Rabbit }
+
+alert( Rabbit.prototype.constructor == Rabbit ); // true
 ```
 
 ## Exception Handling
@@ -415,6 +551,45 @@ finally {
 }
 ```
 
+```
+let error = new Error(message);
+// or
+let error = new SyntaxError(message);
+let error = new ReferenceError(message);
+// ...
+```
+
+```
+try {
+  user = { /*...*/ };
+} catch (err) {
+  if (err instanceof ReferenceError) {
+    alert('ReferenceError'); // "ReferenceError" for accessing an undefined variable
+  }
+}
+```
+
+```
+class ValidationError extends Error {
+  constructor(message) {
+    super(message); // (1)
+    this.name = "ValidationError"; // (2)
+  }
+}
+
+function test() {
+  throw new ValidationError("Whoops!");
+}
+
+try {
+  test();
+} catch(err) {
+  alert(err.message); // Whoops!
+  alert(err.name); // ValidationError
+  alert(err.stack); // a list of nested calls with line numbers for each
+}
+```
+
 Creating Custom Errors
 
 ```
@@ -422,9 +597,13 @@ throw "Too big";    // throw a text
 throw 500;          // throw a number
 ```
 
-## Strict Mode
+## Script Modes
 
-`strict-mode` written at the top of the script
+written at the top of the script
+
+`strict-mode` uses the modern code
+
+`soft-mode` uses old/classic code
 
 ## `This` in Objects
 
@@ -439,7 +618,32 @@ var person = {
 };
 ```
 
+## Get Set Enumerable Configurable
+
+```
+let obj = {
+  get propName() {
+    // getter, the code executed on getting obj.propName
+  },
+
+  set propName(value) {
+    // setter, the code executed on setting obj.propName = value
+  }
+};
+```
+
 ## Classes & Objects
+
+```
+class MyClass {
+  // class methods
+  constructor() { ... }
+  method1() { ... }
+  method2() { ... }
+  method3() { ... }
+  ...
+}
+```
 
 ```
 class Car {
@@ -487,6 +691,123 @@ class B extends A {
 }
 ```
 
+```
+let animal = {
+  eats: true
+};
+let rabbit = {
+  jumps: true
+};
+
+rabbit.__proto__ = animal; // (*)
+
+// we can find both properties in rabbit now:
+alert( rabbit.eats ); // true (**)
+alert( rabbit.jumps ); // true
+```
+
+```
+let animal = {
+  eats: true,
+  walk() {
+    /* this method won't be used by rabbit */
+  }
+};
+
+let rabbit = {
+  __proto__: animal
+};
+
+rabbit.walk = function() {
+  alert("Rabbit! Bounce-bounce!");
+};
+
+rabbit.walk(); // Rabbit! Bounce-bounce!
+```
+
+```
+let animal = {
+  eats: true
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+for(let prop in rabbit) {
+  let isOwn = rabbit.hasOwnProperty(prop);
+
+  if (isOwn) {
+    alert(`Our: ${prop}`); // Our: jumps
+  } else {
+    alert(`Inherited: ${prop}`); // Inherited: eats
+  }
+}
+```
+
+```
+let obj = {};
+
+alert(obj.__proto__ === Object.prototype); // true
+
+alert(obj.toString === obj.__proto__.toString); //true
+alert(obj.toString === Object.prototype.toString); //true
+```
+
+```
+class CoffeeMachine {
+  #waterLimit = 200;
+
+  #fixWaterAmount(value) {
+    if (value < 0) return 0;
+    if (value > this.#waterLimit) return this.#waterLimit;
+  }
+
+  setWaterAmount(value) {
+    this.#waterLimit = this.#fixWaterAmount(value);
+  }
+
+}
+
+let coffeeMachine = new CoffeeMachine();
+
+// can't access privates from outside of the class
+coffeeMachine.#fixWaterAmount(123); // Error
+coffeeMachine.#waterLimit = 1000; // Error
+```
+
+```
+let animal = {
+  name: "Animal",
+  eat() {
+    alert(`${this.name} eats.`);
+  }
+};
+
+let rabbit = {
+  __proto__: animal,
+  name: "Rabbit",
+  eat() {
+    // that's how super.eat() could presumably work
+    this.__proto__.eat.call(this); // (*)
+  }
+};
+
+rabbit.eat(); // Rabbit eats.
+```
+
+```
+class Animal {}
+class Rabbit extends Animal {}
+
+// for statics
+alert(Rabbit.__proto__ === Animal); // true
+
+// for regular methods
+alert(Rabbit.prototype.__proto__ === Animal.prototype); // true
+```
+
 ## Function Objects
 
 ```
@@ -512,6 +833,31 @@ var Vehicle = function(name,model) {
 var BMW = new Vehicle("BMW","2020");
 ```
 
+```
+// mixin
+let sayHiMixin = {
+  sayHi() {
+    alert(`Hello ${this.name}`);
+  },
+  sayBye() {
+    alert(`Bye ${this.name}`);
+  }
+};
+
+// usage:
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+// copy the methods
+Object.assign(User.prototype, sayHiMixin);
+
+// now User can say hi
+new User("Dude").sayHi(); // Hello Dude!
+```
+
 ## Promises
 
 ```
@@ -530,6 +876,88 @@ new Promise((resolve, reject) => {
 })
 .then(() => {
     console.log('Do this, no matter what happened before');
+});
+```
+
+```
+Promise.all([
+  new Promise(resolve => setTimeout(() => resolve(1), 3000)), // 1
+  new Promise(resolve => setTimeout(() => resolve(2), 2000)), // 2
+  new Promise(resolve => setTimeout(() => resolve(3), 1000))  // 3
+]).then(alert); // 1,2,3 when promises are ready: each promise contributes an array member
+```
+
+```
+let urls = [
+  'https://api.github.com/users/iliakan',
+  'https://api.github.com/users/remy',
+  'https://api.github.com/users/jeresig'
+];
+
+// map every url to the promise of the fetch
+let requests = urls.map(url => fetch(url));
+
+// Promise.all waits until all jobs are resolved
+Promise.all(requests)
+  .then(responses => responses.forEach(
+    response => alert(`${response.url}: ${response.status}`)
+  ));
+```
+
+```
+let urls = [
+  'https://api.github.com/users/iliakan',
+  'https://api.github.com/users/remy',
+  'https://no-such-url'
+];
+
+Promise.allSettled(urls.map(url => fetch(url)))
+  .then(results => { // (*)
+    results.forEach((result, num) => {
+      if (result.status == "fulfilled") {
+        alert(`${urls[num]}: ${result.value.status}`);
+      }
+      if (result.status == "rejected") {
+        alert(`${urls[num]}: ${result.reason}`);
+      }
+    });
+  });
+```
+
+```
+Promise.race([
+  new Promise((resolve, reject) => setTimeout(() => resolve(1), 1000)),
+  new Promise((resolve, reject) => setTimeout(() => reject(new Error("Whoops!")), 2000)),
+  new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000))
+]).then(alert); // 1
+```
+
+```
+Promise.any([
+  new Promise((resolve, reject) => setTimeout(() => reject(new Error("Whoops!")), 1000)),
+  new Promise((resolve, reject) => setTimeout(() => resolve(1), 2000)),
+  new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000))
+]).then(alert); // 1
+```
+
+```
+let promise = new Promise(function(resolve, reject) {
+  setTimeout(() => resolve(1), 1000);
+});
+
+promise.then(function(result) {
+  alert(result); // 1
+  return result * 2;
+});
+
+promise.then(function(result) {
+  alert(result); // 1
+  return result * 2;
+});
+
+promise.then(function(result) {
+  alert(result); // 1
+  return result * 2;
 });
 ```
 
@@ -757,6 +1185,15 @@ txt.split(" ");          // Split on spaces
 txt.split("|");          // Split on pipe
 ```
 
+`in` Operator
+
+```
+alert( "Widget".includes("id") ); // true
+alert( "Widget".includes("id", 3) ); // false, from position 3 there is no "id"
+alert( "Widget".startsWith("Wid") ); // true, "Widget" starts with "Wid"
+alert( "Widget".endsWith("get") ); // true, "Widget" ends with "get"
+```
+
 ## Number Methods
 
 - .toString()
@@ -826,6 +1263,24 @@ new Date(date string)
 - .setSeconds()
 - .setTime()
 
+```
+// we have date1 and date2, which function faster returns their difference in ms?
+function diffSubtract(date1, date2) {
+  return date2 - date1;
+}
+
+// or
+function diffGetTime(date1, date2) {
+  return date2.getTime() - date1.getTime();
+}
+```
+
+```
+let ms = Date.parse('2012-01-26T13:51:50.417-07:00');
+
+alert(ms); // 1327611110417  (timestamp)
+```
+
 ## Array Methods
 
 ```
@@ -878,6 +1333,10 @@ var numbers2 = numbers1.map( function(value, index, array) {
 } );
 ```
 
+```
+let filteredArr = arr.filter(item => item >= 10);
+```
+
 Checks
 
 ```
@@ -891,6 +1350,22 @@ Array.isArray(fruits);   // returns true
 
 ```
 fruits instanceof Array;   // returns true
+```
+
+```
+Object.keys(user) = ["name", "age"]
+Object.values(user) = ["John", 30]
+Object.entries(user) = [ ["name","John"], ["age",30] ]
+```
+
+```
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+alert( matrix[1][1] ); // 5, the central element
 ```
 
 ## Regular expressions
@@ -937,6 +1412,24 @@ It is written in files with `.json` extension
 `JSON.parse( Object )`
 `JSON.stringify( Object )`
 
+```
+let user = {
+  name: "John"
+};
+
+let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
+
+alert( JSON.stringify(descriptor, null, 2 ) );
+/* property descriptor:
+{
+  "value": "John",
+  "writable": true,
+  "enumerable": true,
+  "configurable": true
+}
+*/
+```
+
 ## Time Laps and Intervals
 
 `1000` = 1 Second
@@ -971,6 +1464,56 @@ Exiting Loop
 clearInterval( loop );
 ```
 
+```
+function sayHi(phrase, who) {
+  alert( phrase + ', ' + who );
+}
+
+setTimeout(sayHi, 1000, "Hello", "John"); // Hello, John
+```
+
+```
+function defer(f, ms) {
+  return function() {
+    setTimeout(() => f.apply(this, arguments), ms);
+  };
+}
+
+function sayHi(who) {
+  alert('Hello, ' + who);
+}
+
+let sayHiDeferred = defer(sayHi, 2000);
+sayHiDeferred("John"); // Hello, John after 2 seconds
+```
+
+```
+function defer(f, ms) {
+  return function(...args) {
+    let ctx = this;
+    setTimeout(function() {
+      return f.apply(ctx, args);
+    }, ms);
+  };
+}
+```
+
+```
+Function.prototype.defer = function(ms) {
+  let f = this;
+  return function(...args) {
+    setTimeout(() => f.apply(this, args), ms);
+  }
+};
+
+// check it
+function f(a, b) {
+  alert( a + b );
+}
+
+f.defer(1000)(1, 2); // shows 3 after 1 sec
+```
+
 ## Object And Array Destructuring
 
 **Object**
@@ -1000,6 +1543,17 @@ var [ x, y, z, ...a ] = numbers;
 
 ```
 [guest, admin] = [admin, guest];
+```
+
+## Nullish coalescing operator
+
+`??` Operator
+
+```
+// if there's no "count" parameter, show "unknown"
+function showCount(count) {
+  alert(count ?? "unknown");
+}
 ```
 
 ### Optional Chaining Operator
@@ -1114,6 +1668,21 @@ dog
   .walk();
 ```
 
+```
+let animal = {
+  eats: true
+};
+
+// create a new object with animal as a prototype
+let rabbit = Object.create(animal);
+
+alert(rabbit.eats); // true
+
+alert(Object.getPrototypeOf(rabbit) === animal); // true
+
+Object.setPrototypeOf(rabbit, {}); // change the prototype of rabbit to {}
+```
+
 ### The New Function
 
 ```
@@ -1170,4 +1739,281 @@ alert( "Again: " + slow(1) ); // slow(1) result returned from cache
 
 alert( slow(2) ); // slow(2) is cached and the result returned
 alert( "Again: " + slow(2) ); // slow(2) result returned from cache
+```
+
+### Maps and Sets
+
+`Maps`
+
+```
+let map = new Map();
+
+map.set('1', 'str1');   // a string key
+map.set(1, 'num1');     // a numeric key
+map.set(true, 'bool1'); // a boolean key
+
+// remember the regular Object? it would convert keys to string
+// Map keeps the type, so these two are different:
+alert( map.get(1)   ); // 'num1'
+alert( map.get('1') ); // 'str1'
+
+alert( map.size ); // 3
+```
+
+```
+let recipeMap = new Map([
+  ['cucumber', 500],
+  ['tomatoes', 350],
+  ['onion',    50]
+]);
+
+// iterate over keys (vegetables)
+for (let vegetable of recipeMap.keys()) {
+  alert(vegetable); // cucumber, tomatoes, onion
+}
+
+// iterate over values (amounts)
+for (let amount of recipeMap.values()) {
+  alert(amount); // 500, 350, 50
+}
+
+// iterate over [key, value] entries
+for (let entry of recipeMap) { // the same as of recipeMap.entries()
+  alert(entry); // cucumber,500 (and so on)
+}
+
+// runs the function for each (key, value) pair
+recipeMap.forEach( (value, key, map) => {
+  alert(`${key}: ${value}`); // cucumber: 500 etc
+});
+```
+
+`Sets`
+
+```
+let set = new Set();
+
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+// visits, some users come multiple times
+set.add(john);
+set.add(pete);
+set.add(mary);
+set.add(john);
+set.add(mary);
+
+// set keeps only unique values
+alert( set.size ); // 3
+
+for (let user of set) {
+  alert(user.name); // John (then Pete and Mary)
+}
+```
+
+```
+let set = new Set(["oranges", "apples", "bananas"]);
+
+for (let value of set) alert(value);
+
+// the same with forEach:
+set.forEach((value, valueAgain, set) => {
+  alert(value);
+});
+```
+
+```
+function unique(arr) {
+  return Array.from(new Set(arr));
+}
+```
+
+`Weak-Map`
+
+The first difference between `Map` and `WeakMap` is that keys must be objects, not primitive values
+
+```
+let weakMap = new WeakMap();
+
+let obj = {};
+
+weakMap.set(obj, "ok"); // works fine (object key)
+
+// can't use a string as the key
+weakMap.set("test", "Whoops"); // Error, because "test" is not an object
+```
+
+`Weak-Set`
+
+The first difference between `Set` and `WeakSet` is that keys must be objects, not primitive values
+
+```
+let visitedSet = new WeakSet();
+
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+visitedSet.add(john); // John visited us
+visitedSet.add(pete); // Then Pete
+visitedSet.add(john); // John again
+
+// visitedSet has 2 users now
+
+// check if John visited?
+alert(visitedSet.has(john)); // true
+
+// check if Mary visited?
+alert(visitedSet.has(mary)); // false
+
+john = null;
+
+// visitedSet will be cleaned automatically
+```
+
+### Generator Functions
+
+```
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+
+let one = generator.next();
+let two = generator.next();
+let three = generator.next();
+
+alert(JSON.stringify(three)); // {value: 3, done: true}
+```
+
+```
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+
+let generator = generateSequence();
+
+for(let value of generator) {
+  alert(value); // 1, then 2
+}
+```
+
+```
+function* generateSequence(start, end) {
+  for (let i = start; i <= end; i++) yield i;
+}
+```
+
+```
+function* generateSequence(start, end) {
+  for (let i = start; i <= end; i++) yield i;
+}
+
+function* generatePasswordCodes() {
+
+  // 0..9
+  yield* generateSequence(48, 57);
+
+  // A..Z
+  yield* generateSequence(65, 90);
+
+  // a..z
+  yield* generateSequence(97, 122);
+
+}
+
+let str = '';
+
+for(let code of generatePasswordCodes()) {
+  str += String.fromCharCode(code);
+}
+
+alert(str); // 0..9A..Za..z
+```
+
+```
+function* gen() {
+  try {
+    let result = yield "2 + 2 = ?"; // (1)
+
+    alert("The execution does not reach here, because the exception is thrown above");
+  } catch(e) {
+    alert(e); // shows the error
+  }
+}
+
+let generator = gen();
+
+let question = generator.next().value;
+
+generator.throw(new Error("The answer is not found in my database")); // (2)
+```
+
+### Module Import / Export
+
+Modules always work in strict mode
+
+```
+// 📁 sayHi.js
+export function sayHi(user) {
+  alert(`Hello, ${user}!`);
+}
+```
+
+```
+<script type="module">
+  import {sayHi} from './say.js';
+
+  document.body.innerHTML = sayHi('John');
+</script>
+```
+
+```
+// 📁 main.js
+import {sayHi} from './sayHi.js';
+
+alert(sayHi); // function...
+sayHi('John'); // Hello, John!
+```
+
+```
+import {sayHi, sayBye} from './say.js';
+import * as say from './say.js';
+import {sayHi as hi, sayBye as bye} from './say.js';
+```
+
+```
+export default class { // no class name
+  constructor() { ... }
+}
+
+export {default as User} from './user.js'; // re-export default
+```
+
+```
+export * from './user.js'; // to re-export named exports
+export {default} from './user.js'; // to re-export the default export
+```
+
+`Dynamic Import`
+
+```
+let modulePath = prompt("Which module to load?");
+
+import(modulePath)
+  .then(obj => <module object>)
+  .catch(err => <loading error, e.g. if no such module>)
+```
+
+`Inside Functions`
+
+```
+let {hi, bye} = await import('./say.js');
+
+hi();
+bye();
 ```

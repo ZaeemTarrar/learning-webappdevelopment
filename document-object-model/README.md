@@ -113,6 +113,35 @@ document.addEventListener("click", function(){
 - onDrag()
 - ...
 
+### CallBacks ( Async )
+
+```
+function loadScript(src, callback) {
+  let script = document.createElement('script');
+  script.src = src;
+
+  script.onload = () => callback(script);
+
+  document.head.append(script);
+}
+```
+
+### On Error
+
+```
+<script>
+  window.onerror = function(message, url, line, col, error) {
+    alert(`${message}\n At ${line}:${col} of ${url}`);
+  };
+
+  function readData() {
+    badFunc(); // Whoops, something went wrong!
+  }
+
+  readData();
+</script>
+```
+
 ### Browser APIs
 
 **Location APIs**
