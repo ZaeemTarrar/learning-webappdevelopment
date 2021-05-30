@@ -29,6 +29,7 @@ We access the html via `tags` `tag-names` `tag-id` `tag-classes` or `tag-attribu
 ### Console Methods
 
 `console.log()`
+`console.dir()`
 `console.warning()`
 `console.info()`
 `console.error()`
@@ -48,7 +49,28 @@ document.write()
 document.writeln()
 ```
 
+### Interface Description Language
+
+```
+alert( document.body.constructor.name ); // HTMLBodyElement
+```
+
+```
+alert( document.body instanceof HTMLBodyElement ); // true
+alert( document.body instanceof HTMLElement ); // true
+alert( document.body instanceof Element ); // true
+alert( document.body instanceof Node ); // true
+alert( document.body instanceof EventTarget ); // true
+```
+
 ### The Pure DOM
+
+```
+document.body
+document.body.nodeType
+document.body.firstChild.nodeType
+
+```
 
 **Accessing the Html Tag References in Javascript**
 
