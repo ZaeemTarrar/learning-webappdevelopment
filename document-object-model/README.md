@@ -390,12 +390,202 @@ ul.append(getListContent()); // (*)
 </script>
 ```
 
-**Event Listener**
+**Current Scroll and Scrolling**
+
+```
+alert('Current scroll from the top: ' + window.pageYOffset);
+alert('Current scroll from the left: ' + window.pageXOffset);
+```
+
+```
+document.body.scrollTop
+document.body.scrollLeft
+scrollBy(x,y)
+scrollTo(pageX,pageY)
+elem.scrollIntoView(top)
+```
+
+**Coordinates**
+
+```
+elem.getBoundingClientRect()
+```
+
+`The call to document.elementFromPoint(x, y) returns the most nested element at window coordinates (x, y)`
+
+```
+let centerX = document.documentElement.clientWidth / 2;
+let centerY = document.documentElement.clientHeight / 2;
+
+let elem = document.elementFromPoint(centerX, centerY);
+
+elem.style.background = "red";
+alert(elem.tagName);
+```
+
+### Event Listener
 
 ```
 document.addEventListener("click", function(){
   document.getElementById("demo").innerHTML = "Hello World";
 });
+```
+
+```
+document.readyState == 'loading'
+document.addEventListener('DOMContentLoaded', work);
+window.onload = function() {}
+document.addEventListener('readystatechange', () => console.log(document.readyState));
+```
+
+- onLoad()
+- onUnload()
+- onBeforeUnload()
+- onClick()
+- onDoubleClick()
+- onFocus()
+- onBlur()
+- onMouseOver()
+- onMouseDown()
+- onMouseMove()
+- onMouseOut()
+- onMouseUp()
+- onMouseEnter()
+- onMouseLeave()
+- onPointerOver()
+- onPointerDown()
+- onPointerMove()
+- onPointerOut()
+- onPointerUp()
+- onPointerEnter()
+- onPointerLeave()
+- onPointerCancel()
+- gotPointerCapture()
+- lostPointerCapture()
+- onKeyDown()
+- onKeyUp()
+- onKeyPress()
+- onDrag()
+- onSubmit()
+- onError()
+- onTransitioned()
+- onDomContentLoaded()
+- onInput()
+- onChange()
+- onSelect()
+- onChecked()
+- onContextMenu()
+- onCut()
+- onCopy()
+- onPaste()
+- onDrag()
+- onDragStart()
+- onDragEnd()
+- onScroll()
+
+**Mouse Buttons**
+
+```
+event.buttons
+event.which               // Depricated
+```
+
+**Major Key Names**
+
+- shiftKey
+- altKey
+- ctrlKey
+- metaKey
+
+**Keyboard**
+
+```
+event.key
+event.code
+```
+
+```
+element.addEventListener(event, handler, [options]);
+element.removeEventListener(event, handler, [options]);
+```
+
+```
+// this way it works
+document.addEventListener("DOMContentLoaded", function() {
+  alert("DOM built");
+});
+```
+
+```
+event.stopPropagation()
+event.preventDefault()
+```
+
+```
+event.type
+event.currentTarget
+event.target
+event.clientY
+event.clientX
+```
+
+`You can Handle Events using HandleEvent Object or Class Also`
+
+**Bubbling and Dispatching Events**
+
+```
+<h1 id="elem">Hello from the script!</h1>
+
+<script>
+  // catch on document...
+  document.addEventListener("hello", function(event) { // (1)
+    alert("Hello from " + event.target.tagName); // Hello from H1
+  });
+
+  // ...dispatch on elem!
+  let event = new Event("hello", {bubbles: true}); // (2)
+  elem.dispatchEvent(event);
+
+  // the handler on document will activate and display the message.
+
+</script>
+```
+
+```
+let event = new MouseEvent("click", {
+  bubbles: true,
+  cancelable: true,
+  clientX: 100,
+  clientY: 100
+});
+
+alert(event.clientX); // 100
+```
+
+**Custom Events**
+
+```
+<h1 id="elem">Hello for John!</h1>
+
+<script>
+  // additional details come with the event to the handler
+  elem.addEventListener("hello", function(event) {
+    alert(event.detail.name);
+  });
+
+  elem.dispatchEvent(new CustomEvent("hello", {
+    detail: { name: "John" }
+  }));
+</script>
+```
+
+**Capturing**
+
+```
+for(let elem of document.querySelectorAll('*')) {
+    elem.addEventListener("click", e => alert(`Capturing: ${elem.tagName}`), true);
+    elem.addEventListener("click", e => alert(`Bubbling: ${elem.tagName}`));
+  }
 ```
 
 **BaseUrl** `document.baseURI`
@@ -413,15 +603,56 @@ document.addEventListener("click", function(){
 - style.border.width
 - ...
 
-- onLoad()
-- onClick()
-- onDoubleClick()
-- onFocus()
-- onBlur()
-- onMouseUp()
-- onMouseLeave()
-- onDrag()
-- ...
+### Forms
+
+```
+<form name="my">
+  <input name="one" value="1">
+  <input name="two" value="2">
+</form>
+
+<script>
+  // get the form
+  let form = document.forms.my; // <form name="my"> element
+
+  // get the element
+  let elem = form.elements.one; // <input name="one"> element
+
+  alert(elem.value); // 1
+</script>
+```
+
+```
+<form id="form">
+  <input name="login">
+</form>
+
+<script>
+  alert(form.elements.login == form.login); // true, the same <input>
+
+  form.login.name = "username"; // change the name of the input
+
+  // form.elements updated the name:
+  alert(form.elements.login); // undefined
+  alert(form.elements.username); // input
+
+  // form allows both names: the new one and the old one
+  alert(form.username == form.login); // true
+</script>
+```
+
+```
+input.value = "New value";
+textarea.value = "New text";
+
+input.checked = true; // for a checkbox or radio button
+```
+
+**Select**
+
+- select.options
+- select.value
+- select.selectedIndex
 
 ### CallBacks ( Async )
 
@@ -451,6 +682,93 @@ function loadScript(src, callback) {
   readData();
 </script>
 ```
+
+### Script Types
+
+- Async
+- Defer
+
+**Dynamic Script**
+
+```
+function loadScript(src) {
+  let script = document.createElement('script');
+  script.src = src;
+  script.async = false;
+  document.body.append(script);
+}
+
+// long.js runs first because of async=false
+loadScript("/article/script-async-defer/long.js");
+loadScript("/article/script-async-defer/small.js");
+```
+
+### Editable Content
+
+```
+<div contentEditable id="elem">Click and <b>edit</b>, please</div>
+
+<script>
+let observer = new MutationObserver(mutationRecords => {
+  console.log(mutationRecords); // console.log(the changes)
+});
+
+// observe everything except attributes
+observer.observe(elem, {
+  childList: true, // observe direct children
+  subtree: true, // and lower descendants too
+  characterDataOldValue: true // pass old data to callback
+});
+</script>
+```
+
+### Window
+
+```
+window.open('https://javascript.info/')
+window.open(url, name, params)
+newWindow.close();
+newWindow.closed;
+```
+
+**Moving**
+
+- win.moveBy(x,y)
+- win.moveTo(x,y)
+- win.resizeBy(width,height)
+- win.resizeTo(width,height)
+- win.scrollBy(x,y)
+- win.scrollTo(x,y)
+- elem.scrollIntoView(top = true)
+- elem.scrollIntoView(false)
+
+`window.onblur` `window.onfocus`
+
+```
+let newWin = window.open("about:blank", "hello", "width=200,height=200");
+
+newWin.document.write("Hello, world!");
+```
+
+**Window Communications and iFrames**
+
+```
+<!-- iframe from the same site -->
+<iframe src="/" id="iframe"></iframe>
+
+<script>
+  iframe.onload = function() {
+    // just do anything
+    iframe.contentDocument.body.prepend("Hello, world!");
+  };
+</script>
+```
+
+`document.domain = 'site.com';`
+
+- window.top
+- window.parent
+- window.frames
 
 ### Browser APIs
 
@@ -512,4 +830,84 @@ const response = await fetch(url, {
     referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
     body: JSON.stringify(data) // body data type must match "Content-Type" header
   });
+```
+
+**Web Sockets**
+
+```
+let socket = new WebSocket("ws://javascript.info");
+let socket = new WebSocket("wss://javascript.info/chat", ["soap", "wamp"]);
+socket.close([code], [reason]);
+socket.bufferedAmount
+socket.send(moreData());
+socket.binaryType = "arraybuffer";
+socket.onmessage = (event) => {
+  // event.data is either a string (if text) or arraybuffer (if binary)
+};
+```
+
+`socket.readyState`
+
+- CONNECTING
+- OPEN
+- CLOSING
+- CLOSED
+
+```
+let socket = new WebSocket("wss://javascript.info/article/websocket/demo/hello");
+
+socket.onopen = function(e) {
+  alert("[open] Connection established");
+  alert("Sending to server");
+  socket.send("My name is John");
+};
+
+socket.onmessage = function(event) {
+  alert(`[message] Data received from server: ${event.data}`);
+};
+
+socket.onclose = function(event) {
+  if (event.wasClean) {
+    alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+  } else {
+    // e.g. server process killed or network down
+    // event.code is usually 1006 in this case
+    alert('[close] Connection died');
+  }
+};
+
+socket.onerror = function(error) {
+  alert(`[error] ${error.message}`);
+};
+```
+
+**Web Socket with Library**
+
+```
+const ws = new require('ws');
+const wss = new ws.Server({noServer: true});
+
+const clients = new Set();
+
+http.createServer((req, res) => {
+  // here we only handle websocket connections
+  // in real project we'd have some other code here to handle non-websocket requests
+  wss.handleUpgrade(req, req.socket, Buffer.alloc(0), onSocketConnect);
+});
+
+function onSocketConnect(ws) {
+  clients.add(ws);
+
+  ws.on('message', function(message) {
+    message = message.slice(0, 50); // max message length will be 50
+
+    for(let client of clients) {
+      client.send(message);
+    }
+  });
+
+  ws.on('close', function() {
+    clients.delete(ws);
+  });
+}
 ```
