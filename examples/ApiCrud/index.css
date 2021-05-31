@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+form,
+h3,
+div,
+input,
+table {
+  font-family: Comic Sans MS;
+}
+
+#mainPage {
+  padding: 20px;
+}
+
+#view {
+  padding: 30px;
+}
+
+#add-form {
+  padding: 20px;
+  margin: 20px;
+  display: none;
+}

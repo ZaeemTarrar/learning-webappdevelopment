@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+p,
+div {
+  font-family: Comic Sans MS;
+}
+
+#mainPage {
+  padding: 30px;
+}

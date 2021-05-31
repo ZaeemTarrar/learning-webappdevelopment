@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+p,
+div {
+  font-family: Comic Sans MS;
+}
+
+#mainPage {
+  padding: 30px;
+}
+
+#mainPage #paragraph {
+  background-color: gold;
+  color: #000;
+  padding: 20px;
+  border: 2px solid #000;
+  border-radius: 30px;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+}
